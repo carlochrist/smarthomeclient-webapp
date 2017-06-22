@@ -1,25 +1,29 @@
 <header>
   <ul class="nav nav-pills">
     <!--routerLinkActive has to be placed on list item (bootstrap!)-->
-    <li role="presentation" routerLinkActive="active"><a [routerLink]="['/rezepte']">Rezeptbuch</a></li>
-    <li role="presentation" routerLinkActive="active"><a [routerLink]="['/einkaufsliste']">Einkaufsliste</a></li>
-    <li>
-      <div class="dropdown" appDropdown>
-        <button
-          id="dLabel"
-          type="button"
-          aria-haspopup="true"
-          aria-expanded="false"
-          class="btn btn-primary">
-          Verwaltung
-          <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dLabel">
-          <li><a (click)="onStore()" style="cursor: pointer">Speichern</a> </li>
-          <li><a (click)="onFetch()" style="cursor: pointer">Laden</a> </li>
-        </ul>
-      </div>
-    </li>
+    <li role="presentation" routerLinkActive="active"><a [routerLink]="['/dashboard']">Dashboard</a></li>
+    <li role="presentation" routerLinkActive="active"><a [routerLink]="['/heating']">Heating</a></li>
+    <li role="presentation" routerLinkActive="active"><a [routerLink]="['/shutter']">Shutter</a></li>
+    <li role="presentation" routerLinkActive="active"><a [routerLink]="['/thermometer']">Thermometer</a></li>
+    <li role="presentation" routerLinkActive="active"><a [routerLink]="['/weatherstation']">Weatherstation</a></li>
+    <li role="presentation" routerLinkActive="active"><a [routerLink]="['/settings']">Settings</a></li>
+    <!--<li>-->
+      <!--<div class="dropdown" appDropdown>-->
+        <!--<button-->
+          <!--id="dLabel"-->
+          <!--type="button"-->
+          <!--aria-haspopup="true"-->
+          <!--aria-expanded="false"-->
+          <!--class="btn btn-primary">-->
+          <!--Verwaltung-->
+          <!--<span class="caret"></span>-->
+        <!--</button>-->
+        <!--<ul class="dropdown-menu" aria-labelledby="dLabel">-->
+          <!--<li><a (click)="onStore()" style="cursor: pointer">Speichern</a> </li>-->
+          <!--<li><a (click)="onFetch()" style="cursor: pointer">Laden</a> </li>-->
+        <!--</ul>-->
+      <!--</div>-->
+    <!--</li>-->
   </ul>
 </header>
 <hr>

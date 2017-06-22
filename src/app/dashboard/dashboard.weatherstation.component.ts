@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['dashboard.component.css']
+  templateUrl: './dashboard.weatherstation.component.html',
+  styles: []
 })
-export class DashboardComponent implements OnInit {
+export class DashboardWeatherstationComponent implements OnInit {
 
   constructor() { }
 

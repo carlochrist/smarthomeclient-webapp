@@ -10,11 +10,22 @@ import { ShutterComponent } from './shutter/shutter.component';
 import { ThermometerComponent } from './thermometer/thermometer.component';
 import { WeatherstationComponent } from './weatherstation/weatherstation.component';
 import { SettingsComponent } from './settings/settings.component';
+import {HeaderComponent} from './header.component';
+import {routing} from './app.routing';
+import {DashboardHeatingComponent} from './dashboard/dashboard.heating.component';
+import {DashboardShutterComponent} from './dashboard/dashboard.shutter.component';
+import {DashboardThermometerComponent} from './dashboard/dashboard.thermometer.component';
+import {DashboardWeatherstationComponent} from './dashboard/dashboard.weatherstation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    HeaderComponent,
     DashboardComponent,
+    DashboardHeatingComponent,
+    DashboardShutterComponent,
+    DashboardThermometerComponent,
+    DashboardWeatherstationComponent,
     HeatingComponent,
     ShutterComponent,
     ThermometerComponent,
@@ -24,7 +35,8 @@ import { SettingsComponent } from './settings/settings.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    routing
   ],
   providers: [],
   bootstrap: [AppComponent]
