@@ -12,10 +12,10 @@ import { WeatherstationComponent } from './weatherstation/weatherstation.compone
 import { SettingsComponent } from './settings/settings.component';
 import {HeaderComponent} from './header.component';
 import {routing} from './app.routing';
-import {DashboardHeatingComponent} from './dashboard/dashboard.heating.component';
-import {DashboardShutterComponent} from './dashboard/dashboard.shutter.component';
-import {DashboardThermometerComponent} from './dashboard/dashboard.thermometer.component';
-import {DashboardWeatherstationComponent} from './dashboard/dashboard.weatherstation.component';
+import { DashboardHeatingComponent } from './dashboard/devices/dashboard.heating.component';
+import { DashboardShutterComponent } from './dashboard/devices/dashboard.shutter.component';
+import { DashboardThermometerComponent } from './dashboard/devices/dashboard.thermometer.component';
+import { DashboardWeatherstationComponent } from './dashboard/devices/dashboard.weatherstation.component';
 
 @NgModule({
   declarations: [

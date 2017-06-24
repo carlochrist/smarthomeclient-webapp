@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-dashboard',
+  selector: 'app-dashboard-shutter',
   templateUrl: './dashboard.shutter.component.html',
   styles: []
 })

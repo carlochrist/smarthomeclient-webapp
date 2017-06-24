@@ -2,7 +2,7 @@
 <div class="container">
   <div class="jumbotron">
     <h1>Dashboard</h1>
-    <h2>Awesome stuff!</h2>
+    <h2>SmartHomeClient</h2>
   </div>
 
 
@@ -12,22 +12,35 @@
   </div>
   <div class="panel-body">
 
+    <div class="panel panel-default">
+      <div class="panel-body">Look, I'm in a panel!</div>
+    </div>
+
+
       <div class="col-md-12">
         <div class="col-md-6">
-          Device 1
+          <div class="panel panel-default">
+            <app-dashboard-heating></app-dashboard-heating>
+        </div>
         </div>
         <div class="col-md-6">
-          Device 2
+          <div class="panel panel-default">
+          <app-dashboard-shutter></app-dashboard-shutter>
+          </div>
         </div>
       </div>
 
     <div class="col-md-12">
       <div class="col-md-6">
-        Device 3
+        <div class="panel panel-default">
+        <app-dashboard-thermometer></app-dashboard-thermometer>
+        </div>
       </div>
 
       <div class="col-md-6">
-        Device 4
+        <div class="panel panel-default">
+        <app-dashboard-weatherstation></app-dashboard-weatherstation>
+        </div>
       </div>
 
     </div>
