@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardShutterComponent implements OnInit {
 
+  shutterUp() {
+    console.log('Test: Shutter up + 1');
+  }
+
   constructor() { }
 
   ngOnInit() {
