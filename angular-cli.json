@@ -20,7 +20,11 @@
       "styles": [
         "styles.css"
       ],
-      "scripts": [],
+      "scripts": [
+        "./assets/js/cxf-utils.js",
+        "./assets/js/simpleJsFile.js",
+       "./assets/js/SmartHomeManagerWebServiceDescriptorService.js"
+      ],
       "environments": {
         "source": "environments/environment.ts",
         "dev": "environments/environment.ts",

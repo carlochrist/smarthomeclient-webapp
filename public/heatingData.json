@@ -1,0 +1,10 @@
+[
+  {
+    "Name": "Viessmann Heizung",
+    "Hersteller": "Viessmann",
+    "Modell" : "X123",
+    "Seriennummer": "123456ABC",
+    "Temperatur": "21",
+    "Modus": "Nachtmodus"
+  }
+]

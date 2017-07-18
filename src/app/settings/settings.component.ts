@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+// declare var SmartHomeManagerWebServiceDescriptorService: any;
+
 @Component({
   selector: 'app-settings',
   templateUrl: './settings.component.html',
@@ -7,7 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SettingsComponent implements OnInit {
 
-  constructor() { }
+  simpleJSFile: any;
+  SmartHomeManagerWebServiceDescriptorServiceObj: any;
+  responseString: string;
+
+
+  constructor() {
+    // this.SmartHomeManagerWebServiceDescriptorServiceObj = new SmartHomeManagerWebServiceDescriptorServiceObj();
+    // this.responseString = this.smartHomeManagerWebServiceDescriptorServiceObj.getLocation().toString();
+    // this.simpleJSFile = require('./assets/js/.js');
+    // this.responseString = this.simpleJSFile.myFunction(1, 2).toString;
+  }
+
+
+  // wsprovider_connection_global_smarthome_thm_de__weatherStationTransferObject
+
+  // methode
+  // wsprovider_connection_global_smarthome_thm_de__halloWelt_op_onsuccess(client, responseXml)
 
   ngOnInit() {
   }
