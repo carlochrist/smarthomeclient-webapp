@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+/// <reference path="./myClass/index.d.ts" />
+import MyClass from './myClass';
+
 
 // declare var SmartHomeManagerWebServiceDescriptorService: any;
 
@@ -7,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './settings.component.html',
   styles: []
 })
+
 export class SettingsComponent implements OnInit {
 
   simpleJSFile: any;
@@ -19,6 +23,8 @@ export class SettingsComponent implements OnInit {
     // this.responseString = this.smartHomeManagerWebServiceDescriptorServiceObj.getLocation().toString();
     // this.simpleJSFile = require('./assets/js/.js');
     // this.responseString = this.simpleJSFile.myFunction(1, 2).toString;
+    const my = new MyClass();
+    my.add(1, 3);
   }
 
 
