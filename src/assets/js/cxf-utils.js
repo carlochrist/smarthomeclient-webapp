@@ -5,9 +5,9 @@
  * licenses this file to you under the Apache License, Version 2.0 (the
  * "License"); you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  * http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
@@ -485,7 +485,7 @@ function org_apache_cxf_deserialize_MTOM_or_base64(element) {
 		// xmime attribute.
 		return org_apache_cxf_base64_decode64UTF8(base64Text);
 	}
-	// 
+	//
 	if (!org_apache_cxf_isNodeNamedNS(elementChild, org_apache_cxf_XOP_NS, 'Include')) {
 		this.trace('Invalid child element of base64 element');
 		return ''; // we don't knoww what this is, so we throw it out. We could
@@ -500,13 +500,13 @@ function org_apache_cxf_deserialize_MTOM_or_base64(element) {
 	// we only support cid:, not URLs.
 	if(href.length < 4 || href.substr(0, 4) != 'cid:') {
 		this.trace('Non-cid href in xop:Include: ' + href);
-		return ''; 
+		return '';
 	}
 	var cid = href.substr(4);
 	var partobject = this.client.parts[cid];
 	if(!partobject) {
 		this.trace('xop:Include href points to missing attachment: ' + href);
-		return ''; 
+		return '';
 	}
 	// success.
 	return partobject.data;
@@ -619,22 +619,22 @@ var ORG_APACHE_CXF_XMLHTTPREQUEST_MS_PROGIDS = new Array(
     "MSXML2.XMLHTTP.3.0",
     "MSXML2.XMLHTTP",
     "Microsoft.XMLHTTP"
-    );    
+    );
 
 function org_apache_cxf_getXMLHttpRequest()
 {
     var httpRequest = null;
- 
+
     // Create the appropriate HttpRequest object for the browser.
     try {
         httpRequest = new XMLHttpRequest();
         return httpRequest;
     } catch(ex) {
     }
-    
+
     if (window.ActiveXObject != null) {
         // Must be IE, find the right ActiveXObject.
-   
+
         var success = false;
         //
         // Define a list of Microsoft XML HTTP ProgIDs.
@@ -669,14 +669,16 @@ var ORG_APACHE_CXF_MTOM_REQUEST_HEADER = 'Content-Type: application/xop+xml; typ
 // Caller must avoid stupid mistakes like 'GET' with a request body.
 // This does not support attempts to cross-script.
 // This imposes a relatively straightforward set of HTTP options.
-function org_apache_cxf_client_request(url, requestXML, method, sync, headers) 
+function org_apache_cxf_client_request(url, requestXML, method, sync, headers)
 {
+  console.log("IM REQUEST");
 	this.utils.trace("request " + url);
 
 	this.url = url;
 	this.sync = sync;
 
 	this.req = null;
+
 
 	if (method) {
 		this.method = method;
@@ -687,12 +689,15 @@ function org_apache_cxf_client_request(url, requestXML, method, sync, headers)
 			this.method = "GET";
 	}
 
+
 	try {
 		this.req = this.getXMLHttpRequest();
 	} catch (err) {
 		this.utils.trace("Error creating XMLHttpRequest: " + err);
 		this.req = null;
 	}
+
+
 
 	if (this.req == null) {
 		this.utils.trace("Unable to create request object.");
@@ -728,7 +733,7 @@ function org_apache_cxf_client_request(url, requestXML, method, sync, headers)
                 this.req.setRequestHeader(h, headers[h]);
             }
         }
-	}	
+	}
 
 	if (action.length == 0) {
     	action = "\"\"";
@@ -736,7 +741,7 @@ function org_apache_cxf_client_request(url, requestXML, method, sync, headers)
 	if (action.charAt(0) != '"') {
     	action = '\"' + action + '\"';
 	}
-    
+
 	this.req.setRequestHeader("SOAPAction", action);
 	this.req.setRequestHeader("MessageType", this.messageType);
 
@@ -769,6 +774,8 @@ function org_apache_cxf_client_request(url, requestXML, method, sync, headers)
 	}
 
 	this.req.send(dataToSend);
+	console.log("DATA TO SEND");
+	console.log(dataToSend);
 }
 
 CxfApacheOrgClient.prototype.request = org_apache_cxf_client_request;

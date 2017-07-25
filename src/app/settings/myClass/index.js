@@ -6,4 +6,4 @@ class MyClass {
   }
 }
 
-exports.default = MyClass;
+// exports.default = MyClass;

@@ -22,8 +22,8 @@
       ],
       "scripts": [
         "./assets/js/cxf-utils.js",
-        "./app/settings/myClass/index.js",
-       "./assets/js/SmartHomeManagerWebServiceDescriptorService.js"
+       "./assets/js/SHMwsDescriptor.js",
+        "./assets/js/myLibrary.js"
       ],
       "environments": {
         "source": "environments/environment.ts",

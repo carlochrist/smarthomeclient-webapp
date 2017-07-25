@@ -2,7 +2,35 @@
 
 
 <p>WebServiceTest</p>
-  {{responseString}}
+
+  <!--<h1>-->
+    <!--<button (click)='f()'>Test</button>-->
+  <!--</h1>-->
+
+  <h1>
+    <button (click)='logUsers()'> logUsers </button>
+  </h1>
+
+  <div>
+    <ul>
+      <li *ngFor="let user of users | async">
+        <div> Name: {{user.name}} </div>
+        <div> Email: {{user.email}} </div>
+        <div> CatchPhrase: {{user.catchPhrase}} </div>
+      </li>
+    </ul>
+  </div>
+
+  <div>
+    <ul>
+      <li *ngFor="let photo of photos | async">
+        <div> Title: {{photo.title}} </div>
+        <div> Thumbnail: {{photo.thumbnail}} </div>
+      </li>
+    </ul>
+  </div>
+
+
 
 
 </div>
