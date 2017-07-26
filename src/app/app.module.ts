@@ -18,6 +18,7 @@ import { DashboardThermometerComponent } from './dashboard/devices/dashboard.the
 import { DashboardWeatherstationComponent } from './dashboard/devices/dashboard.weatherstation.component';
 import { UserService } from './services/user.service';
 import {PhotoService} from './services/photo.service';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import {PhotoService} from './services/photo.service';
     ThermometerComponent,
     WeatherstationComponent,
     SettingsComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

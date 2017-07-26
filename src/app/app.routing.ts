@@ -5,10 +5,12 @@ import {WeatherstationComponent} from './weatherstation/weatherstation.component
 import {ThermometerComponent} from './thermometer/thermometer.component';
 import {ShutterComponent} from './shutter/shutter.component';
 import {HeatingComponent} from './heating/heating.component';
+import {LoginComponent} from './login/login.component';
 
 const APP_ROUTES: Routes = [
   // pathMatch: 'full': redirect only if complete path is empty
   { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
+  { path: 'login', component: LoginComponent},
   { path: 'dashboard', component: DashboardComponent},
   { path: 'heating', component: HeatingComponent},
   { path: 'shutter', component: ShutterComponent},
