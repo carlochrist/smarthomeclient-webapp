@@ -16,9 +16,9 @@ import { DashboardHeatingComponent } from './dashboard/devices/dashboard.heating
 import { DashboardShutterComponent } from './dashboard/devices/dashboard.shutter.component';
 import { DashboardThermometerComponent } from './dashboard/devices/dashboard.thermometer.component';
 import { DashboardWeatherstationComponent } from './dashboard/devices/dashboard.weatherstation.component';
-import { UserService } from './services/user.service';
-import {PhotoService} from './services/photo.service';
 import { LoginComponent } from './login/login.component';
+import {LoggerService} from './services/logger.service';
+import {DataService} from './services/data.service';
 
 @NgModule({
   declarations: [
@@ -42,7 +42,7 @@ import { LoginComponent } from './login/login.component';
     HttpModule,
     routing
   ],
-  providers: [UserService, PhotoService],
+  providers: [LoggerService, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

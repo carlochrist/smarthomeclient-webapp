@@ -1,70 +1,114 @@
+
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
 import {User} from '../models/user';
 import {LoggerService} from '../services/logger.service';
-import {PhotoService} from '../services/photo.service';
-import {WebserviceService} from '../services/webservice.service';
 import {subscribeOn} from 'rxjs/operator/subscribeOn';
 import {Http, Response} from '@angular/http';
+import {logger} from 'codelyzer/util/logger';
+import {DataService} from '../services/data.service';
+import {Observable} from 'rxjs/Observable';
+import {IHeatingTemperature} from '../models/heatingTemperature';
 
 @Component({
   selector: 'app-settings',
   templateUrl: './settings.component.html',
   styles: [],
-  providers: [LoggerService, WebserviceService]
+  providers: [LoggerService, DataService]
 })
 
 export class SettingsComponent implements OnInit {
 
-  users;
-  photos;
 
-  getData: string;
-  postData: string;
+  serverInfo;
+  resultsHeating;
 
-  results: string[];
-
-  constructor(private webserviceService: WebserviceService, private userService: UserService,
-              private photoService: PhotoService, private logService: LoggerService, private http: Http) {
-    this.users = userService.getUsers();
-    this.photos = photoService.getPhotos();
+  constructor(private dataService: DataService, private logService: LoggerService, private http: Http) {
   }
 
-  ngOnInit(): void {
+  showLogs() {
+
+  }
+
+  // onTestPost() {
+  //   this.webserviceService.postJSON()
+  //     .subscribe(
+  //       data => this.postData = JSON.stringify(data),
+  //       error => alert(error),
+  //       () => console.log('Finished')
+  //     );
+  // }
+
+  // getServerInfo() {
+  //   this.http.get('localhost:8080/ws/info')
+  //     .map((res: Response) => res.json())
+  //     .subscribe();
+  //   }
+
+  // getServerInfo() {
+  //   this.resultsInfo = 'results';
+  //   this.logService.log(this.resultsInfo);
+  //   this.http.get('http://localhost:8080/ws/info')
+  //     .subscribe(data => {
+  //       // Read the result field from the JSON response.
+  //       this.resultsInfo = data['results'];
+  //     });
+  //   this.logService.log(this.resultsInfo);
+  // }
+
+  // getServerInfo() {
+  //   // this.resultsInfo = 'results';
+  //     this.webserviceService.getInfo()
+  //       .subscribe(
+  //         data => this.resultsInfo = JSON.stringify(data),
+  //         error => console.log(error),
+  //         () => console.log('Finished')
+  //       );
+  //   // this.logService.log(this.resultsInfo);
+  // }
+
+
+  // getServerInfo() {
+  //   this.http.request('http://localhost:8080/ws/info')
+  //     .subscribe(res => {
+  //       // this.logService.log(res.text());
+  //       this.serverInfo = res.text();
+  //     });
+  // }
+
+  getServerInfo() {
+    // this.logService.log(JSON.stringify(this.dataService.getServerInfo()));
+
+    this.logService.log(JSON.stringify(this.dataService.getServerInfo()));
+    this.dataService.getServerInfo().subscribe(
+        data => this.serverInfo = data
+    );
+    // this.serverInfo = JSON.stringify(this.serverInfo);
+    // this.serverInfo = this.dataService.getServerInfo();
+    // this.serverInfo = JSON.stringify(this.dataService.getServerInfo());
+  }
+
+
+  getHeatingTemperature2() {
     // Make the HTTP request:
-    this.http.get('http://localhost:8080/ws/getHeatingTemperature/requesting_user/test').subscribe(data => {
-      // Read the result field from the JSON response.
-      this.results = data['results'];
-    });
+    this.http.get('http://localhost:8080/ws/getHeatingTemperature/requesting_user/test')
+      .subscribe(data => {
+        // Read the result field from the JSON response.
+
+        // this.resultsHeating = data['results'];
+        this.resultsHeating = data.json();
+        this.resultsHeating = JSON.stringify(this.resultsHeating);
+        this.logService.log(JSON.stringify(this.resultsHeating));
+      });
   }
 
-  logUsers() {
-    this.logService.log(this.users);
-  }
-
-  helloWorldTestGet() {
-    // this.webserviceService.helloWorld()
-    //   .subscribe(
-    //     data => this.getData = JSON.stringify(data),
-    //     error => alert(error),
-    //     () => console.log('Finished')
-    //   );
-
-
-    this.http.get('localhost:8080/ws/info')
-      .map((res: Response) => res.json())
-      .subscribe();
-
-    }
-
-    onTestPost() {
-      this.webserviceService.postJSON()
-        .subscribe(
-          data => this.postData = JSON.stringify(data),
-          error => alert(error),
-          () => console.log('Finished')
-        );
+  getHeatingTemperature() {
+    this.logService.log(this.resultsHeating.measure_Double);
     }
 
 
+  ngOnInit() {
+    this.dataService.getHeatingTemperature1().subscribe(data => this.resultsHeating = data);
+  }
 }
+

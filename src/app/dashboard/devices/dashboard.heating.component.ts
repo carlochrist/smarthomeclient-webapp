@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {DataService} from '../../data.service';
 import {Data} from '@angular/router';
+import {DataService} from '../../services/data.service';
 
 @Component({
   selector: 'app-dashboard-heating',
@@ -9,28 +9,16 @@ import {Data} from '@angular/router';
   providers: [DataService]
 })
 export class DashboardHeatingComponent implements OnInit {
-  heatingData = [];
+  heatingData = {};
 
-  // for testing
-  getData: string;
-  postData: string;
+  temperature;
 
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
-    // this.dataService.fetchData();
+    this.temperature = this.dataService.getHeatingTemperature();
   }
 
-  // for testing
-
-  onTestGet() {
-    this.dataService.getCurrentTime()
-      .subscribe(
-        data => this.getData = JSON.stringify(data),
-        error => alert(error),
-          () => console.log('Finished')
-      );
-  }
 
 
 

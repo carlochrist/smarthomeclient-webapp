@@ -3,36 +3,32 @@
 
 <p>WebServiceTest</p>
 
-  <!--<h1>-->
-    <!--<button (click)='f()'>Test</button>-->
-  <!--</h1>-->
-
   <h1>
-    <button (click)='logUsers()'> logUsers </button>
+    <button (click)='showLogs()'> show logs </button>
+
   </h1>
-
-  <hr>
-
-  <h1>
-    <button (click)='helloWorldTestGet()'> helloWorldtest </button>
-  </h1>
-
-  {{getData}}
-
-
-  <hr>
-
-  <h1>
-    <button (click)='onTestPost()'> postTest </button>
-  </h1>
-
-  {{postData}}
 
 
   <hr>
 
 
-  {{results}}
+  <h1>
+    <button (click)='getServerInfo()'> getServerInfo </button>
+  </h1>
+
+  {{serverInfo}}
+
+  <hr>
+
+  <h1>
+    <button (click)='getHeatingTemperature()'> getHeatingTemperature </button>
+  </h1>
+
+  {{resultsHeating?.measure_Double}}
+
+  <hr>
+
+
 
   <!--<div>-->
     <!--<ul>-->
