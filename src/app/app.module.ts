@@ -19,6 +19,7 @@ import { DashboardWeatherstationComponent } from './dashboard/devices/dashboard.
 import { LoginComponent } from './login/login.component';
 import {LoggerService} from './services/logger.service';
 import {DataService} from './services/data.service';
+import { NewHeatingComponent } from './heating/subComponents/new-heating/new-heating.component';
 
 @NgModule({
   declarations: [

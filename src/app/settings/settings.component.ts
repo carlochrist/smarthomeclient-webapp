@@ -76,7 +76,7 @@ export class SettingsComponent implements OnInit {
   //     });
   // }
 
-  getServerInfo() {
+  getServerInfo2() {
     // this.logService.log(JSON.stringify(this.dataService.getServerInfo()));
 
     this.logService.log(JSON.stringify(this.dataService.getServerInfo()));
@@ -88,27 +88,30 @@ export class SettingsComponent implements OnInit {
     // this.serverInfo = JSON.stringify(this.dataService.getServerInfo());
   }
 
+  getServerInfo() {
+    this.dataService.getHeatingTemperature().subscribe(data => this.resultsHeating = data);
+    // this.logService.log(JSON.stringify(this.dataService.getServerInfo()));
 
-  getHeatingTemperature2() {
-    // Make the HTTP request:
-    this.http.get('http://localhost:8080/ws/getHeatingTemperature/requesting_user/test')
-      .subscribe(data => {
-        // Read the result field from the JSON response.
-
-        // this.resultsHeating = data['results'];
-        this.resultsHeating = data.json();
-        this.resultsHeating = JSON.stringify(this.resultsHeating);
-        this.logService.log(JSON.stringify(this.resultsHeating));
-      });
+    this.logService.log(JSON.stringify(this.dataService.getServerInfo()));
+    this.dataService.getServerInfo().subscribe(
+      data => this.serverInfo = data
+    );
   }
 
+
   getHeatingTemperature() {
-    this.logService.log(this.resultsHeating.measure_Double);
+    this.logService.log(this.resultsHeating);
     }
+
+  getHeatingData() {
+    this.logService.log(this.resultsHeating);
+  }
 
 
   ngOnInit() {
-    this.dataService.getHeatingTemperature1().subscribe(data => this.resultsHeating = data);
+    // this.dataService.getHeatingTemperature().subscribe(data => this.resultsHeating = data);
+    this.dataService.getHeatingData().subscribe(data => this.resultsHeating = data);
   }
+
 }
 

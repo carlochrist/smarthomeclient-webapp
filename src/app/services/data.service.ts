@@ -24,52 +24,24 @@ export class DataService {
         .map(res => res.json());
   }
 
-  // getHeatingTemperature(): number {
-  //   // Make the HTTP request:
-  //   this.http.get('http://localhost:8080/ws/getHeatingTemperature/requesting_user/test')
-  //     .subscribe(data => {
-  //       // Read the result field from the JSON response.
-  //
-  //       // this.resultsHeating = data['results'];
-  //       // this.resultsHeating = data.json();
-  //       // this.logService.log(JSON.stringify(this.resultsHeating));
-  //       this.temperatureObject = JSON.stringify(data.json());
-  //     });
-  //   return this.temperatureObject;
-  // }
 
-
-  // getHeatingTemperature(): Observable<HeatingTemperature[]> {
-  //
-  //   // ...using get request
-  //   return this.http.get('http://localhost:8080/ws/getHeatingTemperature/requesting_user/test')
-  //   // ...and calling .json() on the response to return data
-  //     .map((res: Response) => res.json())
-  //     // ...errors if any
-  //     .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
-  //
-  // }
-
-  // getHeatingTemperature(){
-  //
-  //   // ...using get request
-  //   return this.http.get('http://localhost:8080/ws/getHeatingTemperature/requesting_user/test')
-  //   // ...and calling .json() on the response to return data
-  //     .map((res: Response) => this.temperatureObject = res.json())
-  //     // ...errors if any
-  //     .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
-  //
-  // }
-
-  getHeatingTemperature1(): Observable<any> {
+  getHeatingTemperature(): Observable<any> {
     return this.http.get('http://localhost:8080/ws/getHeatingTemperature/requesting_user/test')
       .map(data => data.json());
   }
 
-  getHeatingTemperature(): Observable<IHeatingTemperature[]> {
-    return this.http.get('http://localhost:8080/ws/getHeatingTemperature/requesting_user/test')
-      .map(data => data.json() as IHeatingTemperature[]);
+
+  getHeatingData(): Observable<any> {
+    return this.http.get('http://localhost:8080/ws/getHeatingData/requesting_user/test')
+      .map(data => data.json());
   }
+
+
+
+  // getHeatingTemperature1(): Observable<IHeatingTemperature[]> {
+  //   return this.http.get('http://localhost:8080/ws/getHeatingTemperature/requesting_user/test')
+  //     .map(data => data.json() as IHeatingTemperature[]);
+  // }
 
 
   postJSON() {
