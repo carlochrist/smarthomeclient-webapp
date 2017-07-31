@@ -14,10 +14,8 @@ export class DashboardHeatingComponent implements OnInit {
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
-   // this.dataService.getHeatingTemperature().subscribe(data => this.heatingData = data  );
-
+   // this.dataService.getHeatingTemperature().subscribe(data => this.heatingData = data  )
     this.dataService.getHeatingData().subscribe(data => this.heatingData = data);
-
   }
 
 

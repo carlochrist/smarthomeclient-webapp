@@ -1,15 +1,18 @@
 <div class="container">
 
   <div>
-    <button class="btn btn-primary">
-      Heizung anlegen
+    <button class="btn btn-primary" (click)="toggleNewHeatingTemplateOpen()">
+      Heizung anlegen / ändern
     </button>
+
     <button class="btn btn-primary">
       Heizung löschen
     </button>
+
+    <div *ngIf="newHeatingTemplateOpen">
+    <app-new-heating></app-new-heating>
+    </div>
   </div>
-
-
 
   <br>
 
@@ -25,9 +28,24 @@
   <br>
 
   <div>
-    <button class="btn btn-primary">
+    <button class="btn btn-primary" (click)='sendTemperature(temperatureInput.value)'>
       Heizungstemperatur setzen
     </button>
+
+    <!--<input type="text" [(ngmodel)]="temperature"/>-->
+    <input type="text" #temperatureInput>
+
   </div>
 
+
+  <!--<form (ngSubmit)="editUser(f.value)" #f="ngForm">-->
+    <!--<input ngControl="name" [(ngModel)]="heatingData.name" type="text">-->
+    <!--<input ngControl="hersteller" [(ngModel)]="heatingData.manufacturer" type="text">-->
+
+    <!--<button type="submit">Save</button>-->
+  <!--</form>-->
+
 </div>
+
+
+

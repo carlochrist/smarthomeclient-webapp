@@ -1,0 +1,86 @@
+<!--<div class="container">-->
+  <!--<h1> Neue Heizung anlegen </h1>-->
+  <!--<form id="add-heating">-->
+    <!--<div>-->
+      <!--<label for="name">Heizungsname</label>-->
+      <!--<input type="text" class="form-control" id="name" required [(ngmodel)]="model.name" name="name">-->
+    <!--</div>-->
+    <!--<div>-->
+      <!--<label for="name">Hersteller</label>-->
+      <!--<input type="text" class="form-control" id="manufacturer" required [(ngmodel)]="model.manufacturer" name="manufacturer">-->
+    <!--</div>-->
+    <!--<div>-->
+      <!--<label for="name">Modell</label>-->
+      <!--<input type="text" class="form-control" id="modelVariant" required [(ngmodel)]="model.modelVariant" name="modelVariant">-->
+    <!--</div>-->
+    <!--<div>-->
+      <!--<label for="name">Seriennummer</label>-->
+      <!--<input type="text" class="form-control" id="serialnumber" required [(ngmodel)]="model.serialnumber" name="serialnumber">-->
+    <!--</div>    <div>-->
+    <!--<label for="name">Aktuelle Temperatur</label>-->
+    <!--<input type="text" class="form-control" id="currentTemperature" required [(ngmodel)]="model.currentTemperature" name="currentTemperature">-->
+  <!--</div>-->
+    <!--<div>-->
+      <!--<label for="name">Heizungsname</label>-->
+      <!--<input type="text" class="form-control" id="actionMode" required [(ngmodel)]="model.actionMode" name="actionMode">-->
+    <!--</div>-->
+
+    <!--&lt;!&ndash;<input type="text" [(ngmodel)]="name">&ndash;&gt;-->
+    <!--&lt;!&ndash;<input type="text" [(ngmodel)]="manufacturer">&ndash;&gt;-->
+    <!--&lt;!&ndash;<input type="text" [(ngmodel)]="modelVariant">&ndash;&gt;-->
+    <!--&lt;!&ndash;<input type="text" [(ngmodel)]="serialnumber">&ndash;&gt;-->
+    <!--&lt;!&ndash;<input type="text" [(ngmodel)]="currentTemperature">&ndash;&gt;-->
+    <!--&lt;!&ndash;<input type="text" [(ngmodel)]="actionMode">&ndash;&gt;-->
+  <!--</form>-->
+<!--</div>-->
+
+
+<div class="container col-md-12">
+<h2> Heizung anlegen / ändern </h2>
+    <div class="col-md-4">
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+  <div class="form-group">
+    <!--<label>Heizungsname</label>-->
+    <input name="name" ngModel required #first="ngModel" placeholder="Heizungsname">
+    <!--<input name="name" [name]="model.name" ngModel required #first="ngModel" placeholder="Heizungsname">-->
+    <!--<input name="name" [(ngModel)]="heatingData.name" required #first="ngModel" placeholder="Heizungsname">-->
+  </div>
+  <div class="form-group">
+    <!--<label>Hersteller</label>-->
+    <input name="manufacturer" ngModel required #first="ngModel" placeholder="Hersteller">
+  </div>
+  <div class="form-group">
+    <!--<label>Modell</label>-->
+    <input name="modelVariant" ngModel required #first="ngModel" placeholder="Modell">
+  </div>
+  <div class="form-group">
+    <!--<label>Seriennummer</label>-->
+    <input name="serialnumber" ngModel required #first="ngModel" placeholder="Seriennummer">
+  </div>
+  <div *ngIf="heatingData?.currentTemperature.unitOfMeasurement_Enum == 'TEMPERATURE_DEGREESCELSIUS'" class="form-group inputText">
+    <!--<label>Aktuelle Temperatur</label>-->
+    <input name="currentTemperature" ngModel required #first="ngModel" placeholder="Akt. Temp. in Celius">
+  </div>
+  <div *ngIf="heatingData?.currentTemperature.unitOfMeasurement_Enum == 'TEMPERATURE_DEGREESFAHRENHEIT'" class="form-group">
+    <!--<label>Aktuelle Temperatur</label>-->
+    <input name="currentTemperature" ngModel required #first="ngModel" placeholder="Ak. Temp. in Fahrenheit">
+  </div>
+  <div class="form-group">
+    <!--<label>Modus</label>-->
+    <input name="actionMode" ngModel required #first="ngModel" placeholder="Hersteller">
+  </div>
+  <button>Eingaben bestätigen</button>
+</form>
+      </div>
+        <div class="col-md-4">
+            <img src="../../assets/images/heating-logo.jpg" alt="" class="img-responsive"  style="height: 150px;">
+        </div>
+</div>
+
+
+
+
+<!--<p>First name value: {{ first.value }}</p>-->
+<!--<p>First name valid: {{ first.valid }}</p>-->
+<!--<p>Form value: {{ f.value | json }}</p>-->
+<!--<p>Form valid: {{ f.valid }}</p>-->

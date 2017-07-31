@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
@@ -19,7 +19,7 @@ import { DashboardWeatherstationComponent } from './dashboard/devices/dashboard.
 import { LoginComponent } from './login/login.component';
 import {LoggerService} from './services/logger.service';
 import {DataService} from './services/data.service';
-import { NewHeatingComponent } from './heating/subComponents/new-heating/new-heating.component';
+import { NewHeatingComponent } from './heating/new-heating/new-heating.component';
 
 @NgModule({
   declarations: [
@@ -36,10 +36,12 @@ import { NewHeatingComponent } from './heating/subComponents/new-heating/new-hea
     WeatherstationComponent,
     SettingsComponent,
     LoginComponent,
+    NewHeatingComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     routing
   ],
