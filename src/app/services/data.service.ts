@@ -27,15 +27,21 @@ export class DataService {
       return this.http.get('http://localhost:8080/ws/info');
   }
 
+  showLogs(limit: number) {
+    return this.http.get('http://localhost:8080/ws/readLogs/requesting_user/' +
+      this.requestingUser + '/limit/' + limit)
+      .map(data => data.json());
+  }
+
 
   getHeatingTemperature(): Observable<any> {
-    return this.http.get('http://localhost:8080/ws/getHeatingTemperature/requesting_user/test')
+    return this.http.get('http://localhost:8080/ws/getHeatingTemperature/requesting_user/' + this.requestingUser)
       .map(data => data.json());
   }
 
 
   getHeatingData(): Observable<any> {
-    return this.http.get('http://localhost:8080/ws/getHeatingData/requesting_user/test')
+    return this.http.get('http://localhost:8080/ws/getHeatingData/requesting_user/test' + this.requestingUser)
       .map(data => data.json());
   }
 
@@ -63,10 +69,39 @@ export class DataService {
   // }
 
   setHeatingTempature(temperature: number) {
-    return this.http.get(  'http://localhost:8080/ws/setHeatingTemperature/requesting_user/' +
+    return this.http.get('http://localhost:8080/ws/setHeatingTemperature/requesting_user/' +
       this.requestingUser + '/temperature/' + temperature)
       .map(data => data.json());
   }
+
+  createHeating(modelVariant: string, manufacturer: string, genericName: string, serialnumber: string) {
+    console.log('IM CREATE HEATING');
+    console.log(modelVariant);
+    console.log(manufacturer);
+    console.log(genericName);
+    console.log(serialnumber);
+    return this.http.get('http://localhost:8080/ws/createHeating/' +
+      'requesting_user/' + this.requestingUser +
+      '/modelVariant/' + modelVariant +
+      '/manufacturer/' + manufacturer +
+      '/genericName/' +  genericName +
+      '/serialnumber/' + serialnumber)
+      .map(data => data.json());
+  }
+
+  getIndoorTemperature(): Observable<any> {
+    return this.http.get('http://localhost:8080/ws/getIndoorTemperature/requesting_user/' + this.requestingUser)
+      .map(data => data.json());
+  }
+
+  getWeatherstationData() {
+    return this.http.get('http://localhost:8080/ws/getWeatherStationData/requesting_user/' + this.requestingUser)
+      .map(data => data.json());
+  }
+
+
+
+
 
   // updateFood(food) {
   //   let headers = new Headers({ 'Content-Type': 'application/json' });

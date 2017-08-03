@@ -4,10 +4,15 @@
 <p>WebServiceTest</p>
 
   <h1>
-    <button (click)='showLogs()'> show logs </button>
-
+    <input #textbox type="text" [(ngModel)]="textValue" required placeholder="Anzahl Logs">
+    <button (click)='showLogs(textbox.value)'> Logs anzeigen </button>
   </h1>
 
+  <ul>
+    <li *ngFor="let log of logs">
+      {{ log }}
+    </li>
+  </ul>
 
   <hr>
 
@@ -27,6 +32,10 @@
   {{resultsHeating?.measure_Double}}
 
   <hr>
+
+  <h1>
+    <button (click)='getIndoorTemperature()'> getIndoorTemperature </button>
+  </h1>
 
 
 
