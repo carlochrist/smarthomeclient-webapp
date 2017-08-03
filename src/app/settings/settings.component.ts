@@ -22,11 +22,14 @@ export class SettingsComponent implements OnInit {
 
   serverInfo;
   resultsHeating;
+  resultsThermometer;
+  logs;
 
   constructor(private dataService: DataService, private logService: LoggerService, private http: Http) {
   }
 
-  showLogs() {
+  showLogs(limit: number) {
+    this.dataService.showLogs(limit).subscribe(data => this.logs = data);
 
   }
 
@@ -109,6 +112,11 @@ export class SettingsComponent implements OnInit {
   setHeatingData() {
     this.logService.log(this.resultsHeating);
 
+  }
+
+  getIndoorTemperature() {
+    this.dataService.getIndoorTemperature().subscribe(data => this.resultsThermometer = data);
+    console.log(this.resultsThermometer);
   }
 
 

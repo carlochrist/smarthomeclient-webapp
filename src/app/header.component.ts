@@ -6,7 +6,10 @@ import { Component, } from '@angular/core';
   styles: []
 })
 export class HeaderComponent {
-  value = '';
+
+refresh() {
+  window.location.reload();
+}
 
 
 }

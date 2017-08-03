@@ -1,12 +1,16 @@
 <header>
   <ul class="nav nav-pills">
     <li routerLinkActive="active"><a [routerLink]="['/dashboard']">Dashboard</a></li>
-    <li routerLinkActive="active"><a [routerLink]="['/heating']">Heating</a></li>
-    <li routerLinkActive="active"><a [routerLink]="['/shutter']">Shutter</a></li>
+    <li routerLinkActive="active"><a [routerLink]="['/heating']">Heizung</a></li>
+    <li routerLinkActive="active"><a [routerLink]="['/shutter']">Rollläden</a></li>
     <li routerLinkActive="active"><a [routerLink]="['/thermometer']">Thermometer</a></li>
-    <li routerLinkActive="active"><a [routerLink]="['/weatherstation']">Weatherstation</a></li>
-    <li routerLinkActive="active"><a [routerLink]="['/settings']">Settings</a></li>
+    <li routerLinkActive="active"><a [routerLink]="['/weatherstation']">Wetterstation</a></li>
+    <li routerLinkActive="active"><a [routerLink]="['/settings']">Einstellungen</a></li>
     <li routerLinkActive="active"><a [routerLink]="['/login']">Login</a></li>
+    <li>
+        <img src="../assets/images/refresh_icon.png" alt="" class="img-responsive" (click)="refresh()" style="height: 30px;">
+    </li>
   </ul>
+
 </header>
 <hr>
