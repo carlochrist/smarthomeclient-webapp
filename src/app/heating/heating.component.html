@@ -5,7 +5,7 @@
       Heizung anlegen / ändern
     </button>
 
-    <button class="btn btn-primary">
+    <button class="btn btn-primary" (click)="deleteHeating()">
       Heizung löschen
     </button>
 
@@ -28,7 +28,7 @@
   <br>
 
   <div>
-    <button class="btn btn-primary" (click)='sendTemperature(temperatureInput.value)'>
+    <button class="btn btn-primary" (click)='setTemperature(temperatureInput.value)'>
       Heizungstemperatur setzen
     </button>
 

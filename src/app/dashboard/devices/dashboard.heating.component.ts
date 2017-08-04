@@ -10,13 +10,28 @@ import {DataService} from '../../services/data.service';
 })
 export class DashboardHeatingComponent implements OnInit {
   heatingData;
+  interval;
 
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
    // this.dataService.getHeatingTemperature().subscribe(data => this.heatingData = data  )
+   //  this.dataService.getHeatingData().subscribe(data => this.heatingData = data);
+    this.interval = setInterval(() => {
+      this.checkUpdate();
+    }, 500);
+  }
+
+  checkUpdate() {
     this.dataService.getHeatingData().subscribe(data => this.heatingData = data);
   }
+
+  // ngOnDestroy() {
+  //   if (this.interval) {
+  //     clearInterval(this.interval);
+  //   }
+  // }
+
 
 
 

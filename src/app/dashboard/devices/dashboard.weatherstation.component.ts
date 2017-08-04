@@ -14,6 +14,6 @@ export class DashboardWeatherstationComponent implements OnInit {
 
   ngOnInit() {
     this.dataService.getWeatherstationData().subscribe(data => this.weatherstationData = data);
-    console.log(this.weatherstationData);
+    // console.log(this.weatherstationData);
   }
 }

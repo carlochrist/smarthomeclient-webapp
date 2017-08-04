@@ -89,6 +89,11 @@ export class DataService {
       .map(data => data.json());
   }
 
+  deleteHeating(): Observable<any> {
+    return this.http.get('http://localhost:8080/ws/deleteHeating/requesting_user/' + this.requestingUser)
+      .map(data => data.json());
+  }
+
   getIndoorTemperature(): Observable<any> {
     return this.http.get('http://localhost:8080/ws/getIndoorTemperature/requesting_user/' + this.requestingUser)
       .map(data => data.json());

@@ -24,6 +24,7 @@ export class SettingsComponent implements OnInit {
   resultsHeating;
   resultsThermometer;
   logs;
+  resulsWeatherstation;
 
   constructor(private dataService: DataService, private logService: LoggerService, private http: Http) {
   }
@@ -32,53 +33,6 @@ export class SettingsComponent implements OnInit {
     this.dataService.showLogs(limit).subscribe(data => this.logs = data);
 
   }
-
-  // onTestPost() {
-  //   this.webserviceService.postJSON()
-  //     .subscribe(
-  //       data => this.postData = JSON.stringify(data),
-  //       error => alert(error),
-  //       () => console.log('Finished')
-  //     );
-  // }
-
-  // getServerInfo() {
-  //   this.http.get('localhost:8080/ws/info')
-  //     .map((res: Response) => res.json())
-  //     .subscribe();
-  //   }
-
-  // getServerInfo() {
-  //   this.resultsInfo = 'results';
-  //   this.logService.log(this.resultsInfo);
-  //   this.http.get('http://localhost:8080/ws/info')
-  //     .subscribe(data => {
-  //       // Read the result field from the JSON response.
-  //       this.resultsInfo = data['results'];
-  //     });
-  //   this.logService.log(this.resultsInfo);
-  // }
-
-  // getServerInfo() {
-  //   // this.resultsInfo = 'results';
-  //     this.webserviceService.getInfo()
-  //       .subscribe(
-  //         data => this.resultsInfo = JSON.stringify(data),
-  //         error => console.log(error),
-  //         () => console.log('Finished')
-  //       );
-  //   // this.logService.log(this.resultsInfo);
-  // }
-
-
-  // getServerInfo() {
-  //   this.http.request('http://localhost:8080/ws/info')
-  //     .subscribe(res => {
-  //       // this.logService.log(res.text());
-  //       this.serverInfo = res.text();
-  //     });
-  // }
-
 
   getServerInfo() {
     // this.dataService.getHeatingTemperature().subscribe(data => this.resultsHeating = data);
@@ -117,6 +71,11 @@ export class SettingsComponent implements OnInit {
   getIndoorTemperature() {
     this.dataService.getIndoorTemperature().subscribe(data => this.resultsThermometer = data);
     console.log(this.resultsThermometer);
+  }
+
+  getWeatherstationData() {
+    this.dataService.getWeatherstationData().subscribe(data => this.resulsWeatherstation = data);
+    console.log(this.resulsWeatherstation);
   }
 
 

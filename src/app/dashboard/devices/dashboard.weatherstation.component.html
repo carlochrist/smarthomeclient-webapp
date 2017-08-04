@@ -6,13 +6,15 @@
     <p>Hersteller</p>
     <p>Modell:</p>
     <p>Seriennummer:</p>
+    <p>Modus:</p>
   </div>
 
     <div class="col-md-6">
-      <p>{{x}}</p>
-      <p>{{x}}</p>
-      <p>{{x}}</p>
-      <p>{{x}}</p>
+      <p>{{weatherstationData?.genericName}}</p>
+      <p>{{weatherstationData?.manufacturer.deviceMAnufacturer_String}}</p>
+      <p>{{weatherstationData?.modelVariant.modelVariant_String}}</p>
+      <p>{{weatherstationData?.serialnumber}}</p>
+      <p>{{weatherstationData?.actionMode.actionMode_String}}</p>
     </div>
 
   <div class="col-md-3">
@@ -25,19 +27,19 @@
 
 <div class="col-md-12">
   <div class="col-md-2">
-    {{x}} <p> {{x}}% </p>
+    {{x}} <p> {{weatherstationData?.airHumidity}}% </p>
   </div>
   <div class="col-md-2">
-    {{x}} <p> {{x}}hPa</p>
+    {{x}} <p> {{weatherstationData?.airpressure}}hPa</p>
   </div>
   <div class="col-md-2">
-    {{x}} <p> {{x}}°C</p>
+    {{x}} <p> {{weatherstationData?.temperature}}°C</p>
   </div>
   <div class="col-md-2">
-    {{x}} <p> {{x}}l/m²</p>
+    {{x}} <p> {{weatherstationData?.rainfallAmount}}l/m²</p>
   </div>
   <div class="col-md-2">
-    {{x}} <p> {{x}}km/h</p>
+    {{x}} <p> {{weatherstationData?.windVelocity}}km/h</p>
   </div>
 </div>
 

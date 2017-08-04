@@ -21,10 +21,17 @@ export class HeatingComponent implements OnInit {
     (this.newHeatingTemplateOpen == false) ? this.newHeatingTemplateOpen = true : this.newHeatingTemplateOpen = false;
   }
 
-  sendTemperature(temperature: number) {
+  setTemperature(temperature: number) {
     // this.dataService.setHeatingTempature(temperature);
     this.dataService.setHeatingTempature(temperature).subscribe(data => this.temperature = data);
   }
+
+  deleteHeating() {
+    //this.dataService.deleteHeating().subscribe(data => this.temperature = data);
+    this.dataService.deleteHeating();
+  }
+
+
 
   // updateFood(food) {
   //   this._demoService.updateFood(food).subscribe(
