@@ -3,7 +3,7 @@
   <div class="col-md-4">
     <form novalidate (ngSubmit)="onSubmit(thermometer)" [formGroup]="thermometer">
       <div class="form-group">
-        <p>Thermometername:</p>
+        <p>Name des Thermometers:</p>
         <input type="text" placeholder="{{thermometerData?.genericName}}" formControlName="genericName">
       </div>
       <div class="form-group">
@@ -27,6 +27,6 @@
 
   </div>
   <div class="col-md-4">
-  <img src="../../assets/images/heating-logo.jpg" alt="" class="img-responsive"  style="height: 150px;">
+  <img src="../../assets/images/thermometer-logo.png" alt="" class="img-responsive"  style="height: 150px;">
   </div>
 </div>

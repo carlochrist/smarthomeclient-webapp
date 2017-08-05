@@ -1,37 +1,22 @@
 <div class="container">
 
   <div>
-    <button class="btn btn-primary">
-      Wetterstation anlegen
+    <button class="btn btn-primary" (click)="toggleNewWeatherstationTemplateOpen()">
+      Wetterstation anlegen / ändern
     </button>
-    <button class="btn btn-primary">
+
+    <button class="btn btn-primary" (click)="deleteWeatherstation()">
       Wetterstation löschen
     </button>
+
+    <div *ngIf="newWeatherstationTemplateOpen">
+      <app-new-weatherstation></app-new-weatherstation>
+    </div>
   </div>
 
-  <br>
-
-  <!--<div>-->
-    <!--<button class="btn btn-primary">-->
-      <!--Luftfeuchtigkeit einstellen-->
-    <!--</button>-->
-
-    <!--<button class="btn btn-primary">-->
-      <!--Luftdruck einstellen-->
-    <!--</button>-->
-
-    <!--<button class="btn btn-primary">-->
-      <!--Windgeschwindigkeit einstellen-->
-    <!--</button>-->
-
-    <!--<button class="btn btn-primary">-->
-      <!--Außentemperatur einstellen-->
-    <!--</button>-->
-
-    <!--<button class="btn btn-primary">-->
-      <!--Niederschlag einstellen-->
-    <!--</button>-->
-  <!--</div>-->
 
 
 </div>
+
+
+

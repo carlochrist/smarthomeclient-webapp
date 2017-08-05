@@ -1,33 +1,32 @@
 <div class="container col-md-12">
-  <button (click)="logHeatingData()">Log heatingData</button>
-  <h2> Heizung anlegen / ändern </h2>
+  <h2> Wetterstation anlegen / ändern </h2>
   <div class="col-md-4">
-    <form novalidate (ngSubmit)="onSubmit(heating)" [formGroup]="heating">
+    <form novalidate (ngSubmit)="onSubmit(weatherstation)" [formGroup]="weatherstation">
       <div class="form-group">
-        <p>Heizungsname:</p>
-        <input type="text" placeholder="{{heatingData?.genericName}}" formControlName="genericName">
+        <p>Name der Wetterstation:</p>
+        <input type="text" placeholder="{{weatherstationData?.genericName}}" formControlName="genericName">
       </div>
       <div class="form-group">
         <p>Hersteller:</p>
-        <input type="text" placeholder="{{heatingData?.manufacturer.deviceManufacturer_String}}" formControlName="manufacturer">
+        <input type="text" placeholder="{{weatherstationData?.manufacturer.deviceManufacturer_String}}" formControlName="manufacturer">
       </div>
       <div class="form-group">
         <p>Modell:</p>
-        <input type="text" placeholder="{{heatingData?.modelVariant.modelVariant_String}}" formControlName="modelVariant">
+        <input type="text" placeholder="{{weatherstationData?.modelVariant.modelVariant_String}}" formControlName="modelVariant">
       </div>
       <div class="form-group">
         <p>Seriennummer:</p>
-        <input type="text" placeholder="{{heatingData?.serialnumber}}" formControlName="serialnumber">
+        <input type="text" placeholder="{{weatherstationData?.serialnumber}}" formControlName="serialnumber">
       </div>
 
       <div>
-        <button type="submit" (ngSubmit)="onSubmit()" [disabled]="heating.invalid">Eingaben bestätigen</button>
+        <button type="submit" (ngSubmit)="onSubmit()" [disabled]="weatherstation.invalid">Eingaben bestätigen</button>
       </div>
 
     </form>
 
   </div>
   <div class="col-md-4">
-  <img src="../../assets/images/heating-logo.jpg" alt="" class="img-responsive"  style="height: 150px;">
+  <img src="../../assets/images/conrad_weatherstation.png" alt="" class="img-responsive"  style="height: 150px;">
   </div>
 </div>

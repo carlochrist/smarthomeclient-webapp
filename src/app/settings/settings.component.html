@@ -1,8 +1,6 @@
 <div class="container">
 
 
-<p>WebServiceTest</p>
-
   <h1>
     <input #textbox type="text" [(ngModel)]="textValue" required placeholder="Anzahl Logs">
     <button (click)='showLogs(textbox.value)'> Logs anzeigen </button>
@@ -25,64 +23,38 @@
 
   <hr>
 
-  <h1>
-    <button (click)='getHeatingTemperature()'> getHeatingTemperature </button>
-  </h1>
+  <!--<h1>-->
+    <!--<button (click)='getHeatingTemperature()'> getHeatingTemperature </button>-->
+  <!--</h1>-->
 
-  {{resultsHeating?.measure_Double}}
+  <!--{{resultsHeating?.measure_Double}}-->
 
-  <hr>
+  <!--<hr>-->
 
-  <h1>
-    <button (click)='getThermometerData()'> getThermometerData </button>
-  </h1>
-
-
-  <h1>
-    <button (click)='getWeatherstationData()'> getWeatherstationData </button>
-  </h1>
+  <!--<h1>-->
+    <!--<button (click)='getThermometerData()'> getThermometerData </button>-->
+  <!--</h1>-->
 
 
-
-
-  <!--<div>-->
-    <!--<ul>-->
-      <!--<li *ngFor="let user of users | async">-->
-        <!--<div> Name: {{user.name}} </div>-->
-        <!--<div> Email: {{user.email}} </div>-->
-        <!--<div> CatchPhrase: {{user.catchPhrase}} </div>-->
-      <!--</li>-->
-    <!--</ul>-->
-  <!--</div>-->
-
-  <!--<div>-->
-    <!--<ul>-->
-      <!--<li *ngFor="let photo of photos | async">-->
-        <!--<div> Title: {{photo.title}} </div>-->
-        <!--<div> Thumbnail: {{photo.thumbnail}} </div>-->
-      <!--</li>-->
-    <!--</ul>-->
-  <!--</div>-->
-
-
+  <!--<h1>-->
+    <!--<button (click)='getWeatherstationData()'> getWeatherstationData </button>-->
+  <!--</h1>-->
 
 
 </div>
 
+<!--<div class="container">-->
 
+  <!--<div>-->
+    <!--<button class="btn btn-primary">-->
+      <!--Benutzer anlegen-->
+    <!--</button>-->
+    <!--<button class="btn btn-primary">-->
+      <!--Benutzer löschen-->
+    <!--</button>-->
+    <!--<button class="btn btn-primary">-->
+      <!--Benutzer ändern-->
+    <!--</button>-->
+  <!--</div>-->
 
-<div class="container">
-
-  <div>
-    <button class="btn btn-primary">
-      Benutzer anlegen
-    </button>
-    <button class="btn btn-primary">
-      Benutzer löschen
-    </button>
-    <button class="btn btn-primary">
-      Benutzer ändern
-    </button>
-  </div>
-
-</div>
+<!--</div>-->

@@ -19,8 +19,8 @@ export class WeatherstationComponent implements OnInit {
     (this.newWeatherstationTemplateOpen === false) ? this.newWeatherstationTemplateOpen = true : this.newWeatherstationTemplateOpen = false;
   }
 
-  deleteThermometer() {
+  deleteWeatherstation() {
     // this.dataService.deleteThermometer().subscribe(data => this.temperature = data);
-    this.dataService.deleteThermometer();
+    this.dataService.deleteWeatherstation();
   }
 }
