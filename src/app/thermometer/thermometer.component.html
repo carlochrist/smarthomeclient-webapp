@@ -1,12 +1,22 @@
 <div class="container">
 
   <div>
-    <button class="btn btn-primary">
-      Thermometer anlegen
+    <button class="btn btn-primary" (click)="toggleNewThermometerTemplateOpen()">
+      Thermometer anlegen / ändern
     </button>
-    <button class="btn btn-primary">
+
+    <button class="btn btn-primary" (click)="deleteHeating()">
       Thermometer löschen
     </button>
+
+    <div *ngIf="newThermometerTemplateOpen">
+      <app-new-thermometer></app-new-thermometer>
+    </div>
   </div>
 
+
+
 </div>
+
+
+

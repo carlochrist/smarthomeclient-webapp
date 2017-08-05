@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import {type} from 'os';
-import { Heating } from '../../models/heating.model';
 import {FormBuilder, FormControl, FormGroup, NgForm, NgModel, Validators} from '@angular/forms';
 import {DataService} from '../../services/data.service';
 import {User} from '../../models/signup.interface';
-import {HeatingComponent} from '../heating.component';
+import {WeatherstationComponent} from '../weatherstation.component';
 
 @Component({
-  selector: 'app-new-heating',
-  templateUrl: './new-heating.component.html',
-  styleUrls: ['./new-heating.component.css']
+  selector: 'app-new-weatherstation',
+  templateUrl: './new-weatherstation.component.html',
+  styleUrls: ['./new-weatherstation.component.css']
 })
 export class NewHeatingComponent implements OnInit {
 
@@ -18,7 +17,7 @@ export class NewHeatingComponent implements OnInit {
 
   heating: FormGroup;
 
-  constructor(private dataService: DataService, private fb: FormBuilder, private heatingComponent: HeatingComponent) { }
+  constructor(private dataService: DataService, private fb: FormBuilder, private weatherstationComponent: WeatherstationComponent) { }
 
   ngOnInit() {
     this.dataService.getHeatingData().subscribe(data => this.heatingData = data);
@@ -48,7 +47,7 @@ export class NewHeatingComponent implements OnInit {
       this.heating.value[Object.keys(this.heating.value)[3]])
         .subscribe(data => this.heating = data);
     this.heating.reset();
-    this.heatingComponent.toggleNewHeatingTemplateOpen();
+    this.weatherstationComponent.toggleNewWeatherstationTemplateOpen();
   }
 
   logHeatingData() {

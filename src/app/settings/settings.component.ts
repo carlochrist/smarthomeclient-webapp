@@ -73,6 +73,11 @@ export class SettingsComponent implements OnInit {
     console.log(this.resultsThermometer);
   }
 
+  getThermometerData() {
+    this.dataService.getThermometerData().subscribe(data => this.resultsThermometer = data);
+    console.log(this.resultsThermometer);
+  }
+
   getWeatherstationData() {
     this.dataService.getWeatherstationData().subscribe(data => this.resulsWeatherstation = data);
     console.log(this.resulsWeatherstation);

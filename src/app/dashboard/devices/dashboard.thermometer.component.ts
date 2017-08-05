@@ -13,7 +13,7 @@ export class DashboardThermometerComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.dataService.getIndoorTemperature().subscribe(data => this.thermometerData = data);
+    this.dataService.getThermometerData().subscribe(data => this.thermometerData = data);
     console.log(this.thermometerData);
   }
 }

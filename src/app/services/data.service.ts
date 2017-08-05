@@ -94,8 +94,61 @@ export class DataService {
       .map(data => data.json());
   }
 
+  switchHeatingOn(): Observable<any> {
+    return this.http.get('http://localhost:8080/ws/switchHeatingOn/requesting_user/' + this.requestingUser)
+      .map(data => data.json());
+  }
+
+  switchHeatingOff(): Observable<any> {
+    return this.http.get('http://localhost:8080/ws/switchHeatingOff/requesting_user/' + this.requestingUser)
+      .map(data => data.json());
+  }
+
+  createThermometer(modelVariant: string, manufacturer: string, genericName: string, serialnumber: string) {
+    console.log(modelVariant);
+    console.log(manufacturer);
+    console.log(genericName);
+    console.log(serialnumber);
+    return this.http.get('http://localhost:8080/ws/createThermometer/' +
+      'requesting_user/' + this.requestingUser +
+      '/modelVariant/' + modelVariant +
+      '/manufacturer/' + manufacturer +
+      '/genericName/' +  genericName +
+      '/serialnumber/' + serialnumber)
+      .map(data => data.json());
+  }
+
+  deleteThermometer(): Observable<any> {
+    return this.http.get('http://localhost:8080/ws/deleteThermometer/requesting_user/' + this.requestingUser)
+      .map(data => data.json());
+  }
+
+  getThermometerData(): Observable<any> {
+    return this.http.get('http://localhost:8080/ws/getThermometerData/requesting_user/test' + this.requestingUser)
+      .map(data => data.json());
+  }
+
   getIndoorTemperature(): Observable<any> {
     return this.http.get('http://localhost:8080/ws/getIndoorTemperature/requesting_user/' + this.requestingUser)
+      .map(data => data.json());
+  }
+
+  createWeatherstation(modelVariant: string, manufacturer: string, genericName: string, serialnumber: string) {
+    console.log(modelVariant);
+    console.log(manufacturer);
+    console.log(genericName);
+    console.log(serialnumber);
+    return this.http.get('http://localhost:8080/ws/createWeatherstation/' +
+      'requesting_user/' + this.requestingUser +
+      '/modelVariant/' + modelVariant +
+      '/manufacturer/' + manufacturer +
+      '/genericName/' +  genericName +
+      '/serialnumber/' + serialnumber)
+      .map(data => data.json());
+  }
+
+  deleteWeatherstation(): Observable<any> {
+    return this.http.get('http://localhost:8080/ws/deleteWeatherstation/requesting_user/' + this.requestingUser)
       .map(data => data.json());
   }
 
@@ -103,7 +156,6 @@ export class DataService {
     return this.http.get('http://localhost:8080/ws/getWeatherStationData/requesting_user/' + this.requestingUser)
       .map(data => data.json());
   }
-
 
 
 

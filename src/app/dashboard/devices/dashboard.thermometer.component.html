@@ -10,11 +10,11 @@
   </div>
 
   <div class="col-md-6">
-    <p>{{x}}</p>
-    <p>{{x}}</p>
-    <p>{{x}}</p>
-    <p>{{x}}</p>
-    <p>{{x}}</p>
+    <p>{{thermometerData?.genericName}}</p>
+    <p>{{thermometerData?.manufacturer.deviceManufacturer_String}}</p>
+    <p>{{thermometerData?.modelVariant.modelVariant_String}}</p>
+    <p>{{thermometerData?.serialnumber}}</p>
+    <p>{{thermometerData?.temperature}} {{thermometerData?.actionMode.actionMode_String}}</p>
   </div>
 
   <div class="col-md-3">

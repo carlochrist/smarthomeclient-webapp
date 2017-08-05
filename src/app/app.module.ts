@@ -19,7 +19,8 @@ import { DashboardWeatherstationComponent } from './dashboard/devices/dashboard.
 import { LoginComponent } from './login/login.component';
 import {LoggerService} from './services/logger.service';
 import {DataService} from './services/data.service';
-import { NewHeatingComponent } from './heating/new-heating/new-heating.component';
+import {NewThermometerComponent} from './thermometer/new-thermometer/new-thermometer.component';
+import {NewHeatingComponent} from './heating/new-heating/new-heating.component';
 
 @NgModule({
   declarations: [
@@ -36,14 +37,16 @@ import { NewHeatingComponent } from './heating/new-heating/new-heating.component
     WeatherstationComponent,
     SettingsComponent,
     LoginComponent,
-    NewHeatingComponent
+    NewHeatingComponent,
+    NewThermometerComponent,
+    // NewWeatherstationComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    routing
+    routing,
   ],
   providers: [LoggerService, DataService],
   bootstrap: [AppComponent]
