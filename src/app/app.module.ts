@@ -21,7 +21,8 @@ import {LoggerService} from './services/logger.service';
 import {DataService} from './services/data.service';
 import {NewThermometerComponent} from './thermometer/new-thermometer/new-thermometer.component';
 import {NewHeatingComponent} from './heating/new-heating/new-heating.component';
-import {NewWeatherstationComponent} from "./weatherstation/new-weatherstation/new-weatherstation.component";
+import {NewWeatherstationComponent} from './weatherstation/new-weatherstation/new-weatherstation.component';
+// import {DropdownModule} from 'ngx-dropdown';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import {NewWeatherstationComponent} from "./weatherstation/new-weatherstation/ne
     ReactiveFormsModule,
     HttpModule,
     routing,
+    // DropdownModule
   ],
   providers: [LoggerService, DataService],
   bootstrap: [AppComponent]

@@ -12,13 +12,24 @@ import {HeatingComponent} from '../heating.component';
   styleUrls: ['./new-heating.component.css']
 })
 export class NewHeatingComponent implements OnInit {
+  value: String;
+  label: String;
+
+
 
   // for unitOfMeasurement placeholder
   heatingData;
 
   heating: FormGroup;
 
-  constructor(private dataService: DataService, private fb: FormBuilder, private heatingComponent: HeatingComponent) { }
+  manufacturers: String[];
+  models: String[];
+
+  constructor(private dataService: DataService, private fb: FormBuilder, private heatingComponent: HeatingComponent) {
+
+    this.manufacturers = ['Viessmann', 'Buderus', 'Vaillant', 'ConradElectronic', 'ElectricCompany'];
+    this.models = ['Heizung3000X2', 'Heizung2000X2', 'Heizung1000X2'];
+  }
 
   ngOnInit() {
     this.dataService.getHeatingData().subscribe(data => this.heatingData = data);

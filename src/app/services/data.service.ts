@@ -138,7 +138,7 @@ export class DataService {
     console.log(manufacturer);
     console.log(genericName);
     console.log(serialnumber);
-    return this.http.get('http://localhost:8080/ws/createWeatherstation/' +
+    return this.http.get('http://localhost:8080/ws/createWeatherStation/' +
       'requesting_user/' + this.requestingUser +
       '/modelVariant/' + modelVariant +
       '/manufacturer/' + manufacturer +

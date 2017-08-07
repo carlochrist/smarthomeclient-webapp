@@ -20,7 +20,7 @@ export class NewWeatherstationComponent implements OnInit {
   constructor(private dataService: DataService, private fb: FormBuilder, private weatherstationComponent: WeatherstationComponent) { }
 
   ngOnInit() {
-    this.dataService.getHeatingData().subscribe(data => this.weatherstationData = data);
+    this.dataService.getWeatherstationData().subscribe(data => this.weatherstationData = data);
     // this.myGroup = new FormControl('Heating');
     // console.log(this.heatingData);
     this.weatherstation = this.fb.group({
@@ -41,7 +41,7 @@ export class NewWeatherstationComponent implements OnInit {
     // this.dataService.createHeating(this.heatingData.modelVariant,
     //   this.heatingData.manufacturer, this.heatingData.genericName,
     //   this.heatingData.serialnumber).subscribe(data => this.heatingData = data);
-    this.dataService.createHeating(this.weatherstation.value[Object.keys(this.weatherstation.value)[2]],
+    this.dataService.createWeatherstation(this.weatherstation.value[Object.keys(this.weatherstation.value)[2]],
       this.weatherstation.value[Object.keys(this.weatherstation.value)[1]],
       this.weatherstation.value[Object.keys(this.weatherstation.value)[0]],
       this.weatherstation.value[Object.keys(this.weatherstation.value)[3]])

@@ -61,6 +61,36 @@
         <button type="submit" (ngSubmit)="onSubmit()" [disabled]="heating.invalid">Eingaben bestätigen</button>
       </div>
 
+      <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+          <span class="caret"></span></button>
+        <ul class="dropdown-menu" *ngFor="let manufacturer of manufacturers">
+          <li>{{manufacturer}}xd</li>
+        </ul>
+      </div>
+
+      <option *ngFor="let manufacturer of manufacturers" [value]="manufacturer">
+        {{manufacturer}}
+      </option>
+
+      <div class="dropdown show">
+        <a class="btn btn-secondary dropdown-toggle" href="https://example.com" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown link
+        </a>
+
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </div>
+
+
+      <ul>
+        <li *ngFor="let value of values" (click)="select(value.value)">{{value.label}}</li>
+      </ul>
+
+
     </form>
 
   </div>
