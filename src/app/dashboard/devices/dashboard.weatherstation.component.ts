@@ -8,12 +8,19 @@ import {DataService} from '../../services/data.service';
 })
 export class DashboardWeatherstationComponent implements OnInit {
   weatherstationData;
+  interval;
 
   constructor(private dataService: DataService) {
   }
 
   ngOnInit() {
-    this.dataService.getWeatherstationData().subscribe(data => this.weatherstationData = data);
-    // console.log(this.weatherstationData);
+    this.interval = setInterval(() => {
+      this.checkUpdate();
+    }, 500);
   }
+
+  checkUpdate() {
+    this.dataService.getWeatherstationData().subscribe(data => this.weatherstationData = data);
+  }
+
 }

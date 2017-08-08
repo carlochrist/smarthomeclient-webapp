@@ -8,12 +8,19 @@ import {DataService} from '../../services/data.service';
 })
 export class DashboardThermometerComponent implements OnInit {
   thermometerData;
+  interval;
 
   constructor(private dataService: DataService) {
   }
 
   ngOnInit() {
-    this.dataService.getThermometerData().subscribe(data => this.thermometerData = data);
-    console.log(this.thermometerData);
+    this.interval = setInterval(() => {
+      this.checkUpdate();
+    }, 500);
   }
+
+  checkUpdate() {
+    this.dataService.getThermometerData().subscribe(data => this.thermometerData = data);
+  }
+
 }
