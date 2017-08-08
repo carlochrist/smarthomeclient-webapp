@@ -12,24 +12,13 @@ import {HeatingComponent} from '../heating.component';
   styleUrls: ['./new-heating.component.css']
 })
 export class NewHeatingComponent implements OnInit {
-  value: String;
-  label: String;
-
-
 
   // for unitOfMeasurement placeholder
   heatingData;
 
   heating: FormGroup;
 
-  manufacturers: String[];
-  models: String[];
-
-  constructor(private dataService: DataService, private fb: FormBuilder, private heatingComponent: HeatingComponent) {
-
-    this.manufacturers = ['Viessmann', 'Buderus', 'Vaillant', 'ConradElectronic', 'ElectricCompany'];
-    this.models = ['Heizung3000X2', 'Heizung2000X2', 'Heizung1000X2'];
-  }
+  constructor(private dataService: DataService, private fb: FormBuilder, private heatingComponent: HeatingComponent) { }
 
   ngOnInit() {
     this.dataService.getHeatingData().subscribe(data => this.heatingData = data);
@@ -57,13 +46,19 @@ export class NewHeatingComponent implements OnInit {
       this.heating.value[Object.keys(this.heating.value)[1]],
       this.heating.value[Object.keys(this.heating.value)[0]],
       this.heating.value[Object.keys(this.heating.value)[3]])
-        .subscribe(data => this.heating = data);
+      .subscribe(data => this.heating = data);
     this.heating.reset();
     this.heatingComponent.toggleNewHeatingTemplateOpen();
   }
 
-  logHeatingData() {
-    console.log(this.heatingData);
+  setManufacturer(manufacturer: String) {
+    this.heating.value.manufacturer = manufacturer
+    console.log(this.heating);
+  }
+
+  setModel(model: String) {
+    this.heating.value.modelVariant = model
+    console.log(this.heating);
   }
 
 }

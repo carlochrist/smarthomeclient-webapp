@@ -35,164 +35,210 @@
 <!--</div>-->
 
 
-<div class="container col-md-12">
-  <button (click)="logHeatingData()">Log heatingData</button>
+<div class="container col-md-12" style="margin-top: 20px; margin-bottom: 20px;">
+  <!--<button (click)="logHeatingData()">Log heatingData</button>-->
   <h2> Heizung anlegen / ändern </h2>
   <div class="col-md-4">
-    <form novalidate (ngSubmit)="onSubmit(heating)" [formGroup]="heating">
-      <div class="form-group">
-        <p>Name der Heizung:</p>
-        <input type="text" placeholder="{{heatingData?.genericName}}" formControlName="genericName">
-      </div>
-      <div class="form-group">
-        <p>Hersteller:</p>
-        <input type="text" placeholder="{{heatingData?.manufacturer.deviceManufacturer_String}}" formControlName="manufacturer">
-      </div>
-      <div class="form-group">
-        <p>Modell:</p>
-        <input type="text" placeholder="{{heatingData?.modelVariant.modelVariant_String}}" formControlName="modelVariant">
-      </div>
-      <div class="form-group">
-        <p>Seriennummer:</p>
-        <input type="text" placeholder="{{heatingData?.serialnumber}}" formControlName="serialnumber">
-      </div>
-
-      <div>
-        <button type="submit" (ngSubmit)="onSubmit()" [disabled]="heating.invalid">Eingaben bestätigen</button>
-      </div>
-
-      <div class="dropdown">
-        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
-          <span class="caret"></span></button>
-        <ul class="dropdown-menu" *ngFor="let manufacturer of manufacturers">
-          <li>{{manufacturer}}xd</li>
-        </ul>
-      </div>
-
-      <option *ngFor="let manufacturer of manufacturers" [value]="manufacturer">
-        {{manufacturer}}
-      </option>
-
-      <div class="dropdown show">
-        <a class="btn btn-secondary dropdown-toggle" href="https://example.com" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown link
-        </a>
-
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+    <div class="col-md-4">
+      <form novalidate (ngSubmit)="onSubmit(heating)" [formGroup]="heating">
+        <div class="form-group">
+          <p>Name der Heizung:</p>
+          <input type="text" placeholder="{{heatingData?.genericName}}" formControlName="genericName">
         </div>
-      </div>
+        <div class="form-group">
+          <p>Hersteller:</p>
+          <input type="text" placeholder="{{heatingData?.manufacturer.deviceManufacturer_String}}" formControlName="manufacturer">
+        </div>
+        <div class="form-group">
+          <p>Modell:</p>
+          <input type="text" placeholder="{{heatingData?.modelVariant.modelVariant_String}}" formControlName="modelVariant">
+        </div>
+        <div class="form-group">
+          <p>Seriennummer:</p>
+          <input type="text" placeholder="{{heatingData?.serialnumber}}" formControlName="serialnumber">
+        </div>
 
-
-      <ul>
-        <li *ngFor="let value of values" (click)="select(value.value)">{{value.label}}</li>
-      </ul>
-
-
-    </form>
-
+        <div>
+          <button type="submit" (ngSubmit)="onSubmit()" [disabled]="heating.invalid">Eingaben bestätigen</button>
+        </div>
+      </form>
+    </div>
   </div>
   <div class="col-md-4">
-  <img src="../../assets/images/heating-logo.jpg" alt="" class="img-responsive"  style="height: 150px;">
+    <img src="../../assets/images/heating-logo.jpg" alt="" class="img-responsive" style="height: 150px;">
   </div>
 </div>
+    <!--<form novalidate [formGroup]="heating">-->
+      <!--<div class="form-group">-->
+        <!--<p>Name der Heizung:</p>-->
+        <!--<input type="text" placeholder="{{heatingData?.genericName}}" formControlName="genericName">-->
+      <!--</div>-->
+      <!--<div class="form-group">-->
+        <!--<p>Hersteller:</p>-->
+        <!--&lt;!&ndash;<div class="btn-group-vertical">&ndash;&gt;-->
+        <!--&lt;!&ndash;<button type="button" (click)="setManufacturer('Viessmann')" class="btn btn-primary">Viessmann</button>&ndash;&gt;-->
+        <!--&lt;!&ndash;<button type="button" (click)="setManufacturer('Buderus')" class="btn btn-primary">Buderus</button>&ndash;&gt;-->
+        <!--&lt;!&ndash;<button type="button" (click)="setManufacturer('Vaillant')" class="btn btn-primary">Vaillant</button>&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
 
-  <!--<div class="col-md-4">-->
-    <!--<form novalidate (ngSubmit)="onSubmit(heating)" [formGroup]="heating">-->
-    <!--<input type="text" placeholder="{{heatingData?.genericName}}" formControlName="genericName">-->
-    <!--<input type="text" placeholder="{{heatingData?.modelVariant.modelVariant_String}}" formControlName="modelVariant">-->
-    <!--<input type="text" placeholder="{{heatingData?.manufacturer.deviceManufacturer_String}}" formControlName="manufacturer">-->
-    <!--<input type="text" placeholder="{{heatingData?.serialnumber}}" formControlName="serialnumber">-->
+        <!--&lt;!&ndash;<div class="radio">&ndash;&gt;-->
+          <!--&lt;!&ndash;<label><input type="radio" (click)="setManufacturer('Viessmann')" name="manufacturer">Viessmann</label>&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--&lt;!&ndash;<div class="radio">&ndash;&gt;-->
+          <!--&lt;!&ndash;<label><input type="radio" (click)="setManufacturer('Buderus')" name="manufacturer">Buderus</label>&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--&lt;!&ndash;<div class="radio">&ndash;&gt;-->
+          <!--&lt;!&ndash;<label><input type="radio" (click)="setManufacturer('Vaillant')" name="manufacturer">Vaillant</label>&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
 
-      <!--<button type="submit" [disabled]="heating.invalid">Eingaben bestätigen</button>-->
+        <!--<input type="text" placeholder="{{heatingData?.manufacturer.deviceManufacturer_String}}" formControlName="manufacturer">-->
+      <!--</div>-->
+      <!--<div class="form-group">-->
+        <!--<p>Modell:</p>-->
+        <!--&lt;!&ndash;<div class="btn-group-vertical">&ndash;&gt;-->
+        <!--&lt;!&ndash;<button type="button" (click)="setManufacturer('Heizung1000X2')" class="btn btn-primary">Heizung1000X2</button>&ndash;&gt;-->
+        <!--&lt;!&ndash;<button type="button" (click)="setManufacturer('Heizung2000X2')" class="btn btn-primary">Heizung2000X2</button>&ndash;&gt;-->
+        <!--&lt;!&ndash;<button type="button" (click)="setManufacturer('Heizung3000X2')" class="btn btn-primary">Heizung3000X2</button>&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+
+          <!--&lt;!&ndash;<div class="radio">&ndash;&gt;-->
+          <!--&lt;!&ndash;<label><input type="radio" (click)="setModel('Heizung1000X2')" required name="model">Heizung1000X2</label>&ndash;&gt;-->
+           <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+          <!--&lt;!&ndash;<div class="radio">&ndash;&gt;-->
+          <!--&lt;!&ndash;<label><input type="radio" (click)="setModel('Heizung2000X2')" required name="model">Heizung2000X2</label>&ndash;&gt;-->
+           <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--&lt;!&ndash;<div class="radio">&ndash;&gt;-->
+          <!--&lt;!&ndash;<label><input type="radio" (click)="setModel('Heizung3000X2')" required name="model">Heizung3000X2</label>&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+        <!--<input type="text" placeholder="{{heatingData?.modelVariant.modelVariant_String}}" formControlName="modelVariant">-->
+      <!--</div>-->
+      <!--<div class="form-group">-->
+        <!--<p>Seriennummer:</p>-->
+        <!--<input type="text" placeholder="{{heatingData?.serialnumber}}" formControlName="serialnumber">-->
+      <!--</div>-->
+
+      <!--<div>-->
+        <!--<button type="button" class="btn btn-secondary" (click)="onSubmit(heating)" [disabled]="heating.invalid">Eingaben bestätigen</button>-->
+      <!--</div>-->
+
+
+      <!--&lt;!&ndash;<div class="dropdown">&ndash;&gt;-->
+      <!--&lt;!&ndash;<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example&ndash;&gt;-->
+      <!--&lt;!&ndash;<span class="caret"></span></button>&ndash;&gt;-->
+      <!--&lt;!&ndash;<ul class="dropdown-menu" *ngFor="let manufacturer of manufacturers">&ndash;&gt;-->
+      <!--&lt;!&ndash;<li>{{manufacturer}}</li>&ndash;&gt;-->
+      <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+      <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+      <!--&lt;!&ndash;<option *ngFor="let manufacturer of manufacturers" [value]="manufacturer">&ndash;&gt;-->
+      <!--&lt;!&ndash;{{manufacturer}}&ndash;&gt;-->
+      <!--&lt;!&ndash;</option>&ndash;&gt;-->
+
     <!--</form>-->
-  <!--</div>-->
 
-
-  <!--<form novalidate (ngSubmit)="onSubmit(heating)" [formGroup]="heating">-->
-
-    <!--<div class="form-group">-->
-      <!--<input type="text" placeholder="{{heatingData?.genericName}}" formControlName="name">-->
-      <!--&lt;!&ndash;<input name="name" ngModel required #first="ngModel" [value]="heatingData?.genericName" placeholder="Heizungsname">&ndash;&gt;-->
-    <!--</div>-->
-
-    <!--&lt;!&ndash;<div class="error" *ngIf="heating.get('name').hasError('required') && heating.get('name').touched">&ndash;&gt;-->
-    <!--&lt;!&ndash;Name is required&ndash;&gt;-->
-    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-
-    <!--&lt;!&ndash;<div formGroupName="account">&ndash;&gt;-->
-    <!--&lt;!&ndash;<label>&ndash;&gt;-->
-    <!--&lt;!&ndash;<span>Email address</span>&ndash;&gt;-->
-    <!--&lt;!&ndash;<input type="email" placeholder="Your email address" formControlName="email">&ndash;&gt;-->
-    <!--&lt;!&ndash;</label>&ndash;&gt;-->
-    <!--&lt;!&ndash;<div&ndash;&gt;-->
-    <!--&lt;!&ndash;class="error"&ndash;&gt;-->
-    <!--&lt;!&ndash;*ngIf="user.get('account').get('email').hasError('required') && user.get('account').get('email').touched">&ndash;&gt;-->
-    <!--&lt;!&ndash;Email is required&ndash;&gt;-->
-    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-    <!--&lt;!&ndash;<label>&ndash;&gt;-->
-    <!--&lt;!&ndash;<span>Confirm address</span>&ndash;&gt;-->
-    <!--&lt;!&ndash;<input type="email" placeholder="Confirm your email address" formControlName="confirm">&ndash;&gt;-->
-    <!--&lt;!&ndash;</label>&ndash;&gt;-->
-    <!--&lt;!&ndash;<div&ndash;&gt;-->
-    <!--&lt;!&ndash;class="error"&ndash;&gt;-->
-    <!--&lt;!&ndash;*ngIf="user.get('account').get('confirm').hasError('required') && user.get('account').get('confirm').touched">&ndash;&gt;-->
-    <!--&lt;!&ndash;Confirming email is required&ndash;&gt;-->
-    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-    <!--<button type="submit" [disabled]="heating.invalid">Eingaben bestätigen</button>-->
-  <!--</form>-->
-
-
-
-  <!--<form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>-->
-  <!--<div class="form-group">-->
-  <!--&lt;!&ndash;<label>Heizungsname</label>&ndash;&gt;-->
-  <!--<input name="name" ngModel required #first="ngModel" [value]="heatingData?.genericName" placeholder="Heizungsname">-->
-  <!--&lt;!&ndash;<input name="name" [name]="model.name" ngModel required #first="ngModel" placeholder="Heizungsname">&ndash;&gt;-->
-  <!--&lt;!&ndash;<input name="name" [(ngModel)]="heatingData.name" required #first="ngModel" placeholder="Heizungsname">&ndash;&gt;-->
-  <!--</div>-->
-  <!--<div class="form-group">-->
-  <!--&lt;!&ndash;<label>Hersteller</label>&ndash;&gt;-->
-  <!--<input name="manufacturer" ngModel required #first="ngModel" [value]="heatingData?.manufacturer.deviceManufacturer_String" placeholder="Hersteller">-->
-  <!--</div>-->
-  <!--<div class="form-group">-->
-  <!--&lt;!&ndash;<label>Modell</label>&ndash;&gt;-->
-  <!--<input name="modelVariant" ngModel required #first="ngModel" [value]="heatingData?.modelVariant.modelVariant_String" placeholder="Modell">-->
-  <!--</div>-->
-  <!--<div class="form-group">-->
-  <!--&lt;!&ndash;<label>Seriennummer</label>&ndash;&gt;-->
-  <!--<input name="serialnumber" ngModel required #first="ngModel" [value]="heatingData?.serialnumber" placeholder="Seriennummer">-->
-  <!--</div>-->
-  <!--<div class="form-group">-->
-  <!--&lt;!&ndash;<label>Aktuelle Temperatur</label>&ndash;&gt;-->
-  <!--<input name="currentTemperature" ngModel required #first="ngModel" [value]="heatingData?.currentTemperature.measure_Double" placeholder="Temp. in Celius">-->
-  <!--</div>-->
-  <!--&lt;!&ndash;<div *ngIf="heatingData?.currentTemperature.unitOfMeasurement_Enum == 'TEMPERATURE_DEGREESCELSIUS'" class="form-group">&ndash;&gt;-->
-  <!--&lt;!&ndash;&lt;!&ndash;<label>Aktuelle Temperatur</label>&ndash;&gt;&ndash;&gt;-->
-  <!--&lt;!&ndash;<input name="currentTemperature" ngModel required #first="ngModel" [value]="heatingData?.currentTemperature.measure_Double" placeholder="Temp. in Celius">&ndash;&gt;-->
-  <!--&lt;!&ndash;</div>&ndash;&gt;-->
-  <!--&lt;!&ndash;<div *ngIf="heatingData?.currentTemperature.unitOfMeasurement_Enum == 'TEMPERATURE_DEGREESFAHRENHEIT'" class="form-group">&ndash;&gt;-->
-  <!--&lt;!&ndash;&lt;!&ndash;<label>Aktuelle Temperatur</label>&ndash;&gt;&ndash;&gt;-->
-  <!--&lt;!&ndash;<input name="currentTemperature" ngModel required #first="ngModel" [value]="heatingData?.currentTemperature.measure_Double" placeholder="Temp. in Fahrenheit">&ndash;&gt;-->
-  <!--&lt;!&ndash;</div>&ndash;&gt;-->
-  <!--&lt;!&ndash;<div *ngIf="heatingData?.currentTemperature.unitOfMeasurement_Enum != 'TEMPERATURE_DEGREESCELSIUS' && heatingData?.currentTemperature.unitOfMeasurement_Enum != 'TEMPERATURE_DEGREESFAHRENHEIT'" class="form-group">&ndash;&gt;-->
-  <!--&lt;!&ndash;&lt;!&ndash;<label>Aktuelle Temperatur</label>&ndash;&gt;&ndash;&gt;-->
-  <!--&lt;!&ndash;<input name="currentTemperature" ngModel required #first="ngModel" [value]="heatingData?.currentTemperature.measure_Double" placeholder="Temp. in Fahrenheit">&ndash;&gt;-->
-  <!--&lt;!&ndash;</div>&ndash;&gt;-->
-
-  <!--<button>Eingaben bestätigen</button>-->
-  <!--</form>-->
   <!--</div>-->
   <!--<div class="col-md-4">-->
-  <!--<img src="../../assets/images/heating-logo.jpg" alt="" class="img-responsive"  style="height: 150px;">-->
+    <!--<img src="../../assets/images/heating-logo.jpg" alt="" class="img-responsive" style="height: 150px;">-->
   <!--</div>-->
-  <!--</div>-->
+<!--</div>-->
 
 
-  <!--&lt;!&ndash;<p>First name value: {{ first.value }}</p>&ndash;&gt;-->
-  <!--&lt;!&ndash;<p>First name valid: {{ first.valid }}</p>&ndash;&gt;-->
-  <!--&lt;!&ndash;<p>Form value: {{ f.value | json }}</p>&ndash;&gt;-->
-  <!--&lt;!&ndash;<p>Form valid: {{ f.valid }}</p>&ndash;&gt;-->
+<!--<div class="col-md-4">-->
+<!--<form novalidate (ngSubmit)="onSubmit(heating)" [formGroup]="heating">-->
+<!--<input type="text" placeholder="{{heatingData?.genericName}}" formControlName="genericName">-->
+<!--<input type="text" placeholder="{{heatingData?.modelVariant.modelVariant_String}}" formControlName="modelVariant">-->
+<!--<input type="text" placeholder="{{heatingData?.manufacturer.deviceManufacturer_String}}" formControlName="manufacturer">-->
+<!--<input type="text" placeholder="{{heatingData?.serialnumber}}" formControlName="serialnumber">-->
+
+<!--<button type="submit" [disabled]="heating.invalid">Eingaben bestätigen</button>-->
+<!--</form>-->
+<!--</div>-->
+
+
+<!--<form novalidate (ngSubmit)="onSubmit(heating)" [formGroup]="heating">-->
+
+<!--<div class="form-group">-->
+<!--<input type="text" placeholder="{{heatingData?.genericName}}" formControlName="name">-->
+<!--&lt;!&ndash;<input name="name" ngModel required #first="ngModel" [value]="heatingData?.genericName" placeholder="Heizungsname">&ndash;&gt;-->
+<!--</div>-->
+
+<!--&lt;!&ndash;<div class="error" *ngIf="heating.get('name').hasError('required') && heating.get('name').touched">&ndash;&gt;-->
+<!--&lt;!&ndash;Name is required&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;<div formGroupName="account">&ndash;&gt;-->
+<!--&lt;!&ndash;<label>&ndash;&gt;-->
+<!--&lt;!&ndash;<span>Email address</span>&ndash;&gt;-->
+<!--&lt;!&ndash;<input type="email" placeholder="Your email address" formControlName="email">&ndash;&gt;-->
+<!--&lt;!&ndash;</label>&ndash;&gt;-->
+<!--&lt;!&ndash;<div&ndash;&gt;-->
+<!--&lt;!&ndash;class="error"&ndash;&gt;-->
+<!--&lt;!&ndash;*ngIf="user.get('account').get('email').hasError('required') && user.get('account').get('email').touched">&ndash;&gt;-->
+<!--&lt;!&ndash;Email is required&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;<label>&ndash;&gt;-->
+<!--&lt;!&ndash;<span>Confirm address</span>&ndash;&gt;-->
+<!--&lt;!&ndash;<input type="email" placeholder="Confirm your email address" formControlName="confirm">&ndash;&gt;-->
+<!--&lt;!&ndash;</label>&ndash;&gt;-->
+<!--&lt;!&ndash;<div&ndash;&gt;-->
+<!--&lt;!&ndash;class="error"&ndash;&gt;-->
+<!--&lt;!&ndash;*ngIf="user.get('account').get('confirm').hasError('required') && user.get('account').get('confirm').touched">&ndash;&gt;-->
+<!--&lt;!&ndash;Confirming email is required&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--<button type="submit" [disabled]="heating.invalid">Eingaben bestätigen</button>-->
+<!--</form>-->
+
+
+<!--<form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>-->
+<!--<div class="form-group">-->
+<!--&lt;!&ndash;<label>Heizungsname</label>&ndash;&gt;-->
+<!--<input name="name" ngModel required #first="ngModel" [value]="heatingData?.genericName" placeholder="Heizungsname">-->
+<!--&lt;!&ndash;<input name="name" [name]="model.name" ngModel required #first="ngModel" placeholder="Heizungsname">&ndash;&gt;-->
+<!--&lt;!&ndash;<input name="name" [(ngModel)]="heatingData.name" required #first="ngModel" placeholder="Heizungsname">&ndash;&gt;-->
+<!--</div>-->
+<!--<div class="form-group">-->
+<!--&lt;!&ndash;<label>Hersteller</label>&ndash;&gt;-->
+<!--<input name="manufacturer" ngModel required #first="ngModel" [value]="heatingData?.manufacturer.deviceManufacturer_String" placeholder="Hersteller">-->
+<!--</div>-->
+<!--<div class="form-group">-->
+<!--&lt;!&ndash;<label>Modell</label>&ndash;&gt;-->
+<!--<input name="modelVariant" ngModel required #first="ngModel" [value]="heatingData?.modelVariant.modelVariant_String" placeholder="Modell">-->
+<!--</div>-->
+<!--<div class="form-group">-->
+<!--&lt;!&ndash;<label>Seriennummer</label>&ndash;&gt;-->
+<!--<input name="serialnumber" ngModel required #first="ngModel" [value]="heatingData?.serialnumber" placeholder="Seriennummer">-->
+<!--</div>-->
+<!--<div class="form-group">-->
+<!--&lt;!&ndash;<label>Aktuelle Temperatur</label>&ndash;&gt;-->
+<!--<input name="currentTemperature" ngModel required #first="ngModel" [value]="heatingData?.currentTemperature.measure_Double" placeholder="Temp. in Celius">-->
+<!--</div>-->
+<!--&lt;!&ndash;<div *ngIf="heatingData?.currentTemperature.unitOfMeasurement_Enum == 'TEMPERATURE_DEGREESCELSIUS'" class="form-group">&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<label>Aktuelle Temperatur</label>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;<input name="currentTemperature" ngModel required #first="ngModel" [value]="heatingData?.currentTemperature.measure_Double" placeholder="Temp. in Celius">&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;<div *ngIf="heatingData?.currentTemperature.unitOfMeasurement_Enum == 'TEMPERATURE_DEGREESFAHRENHEIT'" class="form-group">&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<label>Aktuelle Temperatur</label>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;<input name="currentTemperature" ngModel required #first="ngModel" [value]="heatingData?.currentTemperature.measure_Double" placeholder="Temp. in Fahrenheit">&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;<div *ngIf="heatingData?.currentTemperature.unitOfMeasurement_Enum != 'TEMPERATURE_DEGREESCELSIUS' && heatingData?.currentTemperature.unitOfMeasurement_Enum != 'TEMPERATURE_DEGREESFAHRENHEIT'" class="form-group">&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<label>Aktuelle Temperatur</label>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;<input name="currentTemperature" ngModel required #first="ngModel" [value]="heatingData?.currentTemperature.measure_Double" placeholder="Temp. in Fahrenheit">&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+<!--<button>Eingaben bestätigen</button>-->
+<!--</form>-->
+<!--</div>-->
+<!--<div class="col-md-4">-->
+<!--<img src="../../assets/images/heating-logo.jpg" alt="" class="img-responsive"  style="height: 150px;">-->
+<!--</div>-->
+<!--</div>-->
+
+
+<!--&lt;!&ndash;<p>First name value: {{ first.value }}</p>&ndash;&gt;-->
+<!--&lt;!&ndash;<p>First name valid: {{ first.valid }}</p>&ndash;&gt;-->
+<!--&lt;!&ndash;<p>Form value: {{ f.value | json }}</p>&ndash;&gt;-->
+<!--&lt;!&ndash;<p>Form valid: {{ f.valid }}</p>&ndash;&gt;-->

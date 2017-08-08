@@ -50,4 +50,14 @@ export class NewThermometerComponent implements OnInit {
     this.thermometerComponent.toggleNewThermometerTemplateOpen();
   }
 
+  setManufacturer(manufacturer: String) {
+    this.thermometer.value.manufacturer = manufacturer
+    console.log(this.thermometer);
+  }
+
+  setModel(model: String) {
+    this.thermometer.value.modelVariant = model
+    console.log(this.thermometer);
+  }
+
 }

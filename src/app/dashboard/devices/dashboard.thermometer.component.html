@@ -14,7 +14,7 @@
     <p>{{thermometerData?.manufacturer.deviceManufacturer_String}}</p>
     <p>{{thermometerData?.modelVariant.modelVariant_String}}</p>
     <p>{{thermometerData?.serialnumber}}</p>
-    <p>{{thermometerData?.temperature}} {{thermometerData?.actionMode.actionMode_String}}</p>
+    <p>{{thermometerData?.temperature?.measure_Double}} {{thermometerData?.temperature?.unitOfMeasurement_String}}</p>
   </div>
 
   <div class="col-md-3">

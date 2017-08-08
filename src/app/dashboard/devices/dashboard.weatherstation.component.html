@@ -27,19 +27,19 @@
 
 <div class="col-md-12">
   <div class="col-md-2">
-    {{x}} <p> {{weatherstationData?.airHumidity}}% </p>
+  <p> {{weatherstationData?.airHumidity.measure_Double}}{{weatherstationData?.airHumidity.unitOfMeasurement_String}} </p>
   </div>
   <div class="col-md-2">
-    {{x}} <p> {{weatherstationData?.airpressure}}hPa</p>
+  <p> {{weatherstationData?.airPressure.measure_Double}}{{weatherstationData?.airPressure.unitOfMeasurement_String}}</p>
   </div>
   <div class="col-md-2">
-    {{x}} <p> {{weatherstationData?.temperature}}°C</p>
+    <p> {{weatherstationData?.temperature.measure_Double}}{{weatherstationData?.temperature.unitOfMeasurement_String}}</p>
   </div>
   <div class="col-md-2">
-    {{x}} <p> {{weatherstationData?.rainfallAmount}}l/m²</p>
+    <p> {{weatherstationData?.rainfallAmount.measure_Double}}{{weatherstationData?.rainfallAmount.unitOfMeasurement_String}}</p>
   </div>
   <div class="col-md-2">
-    {{x}} <p> {{weatherstationData?.windVelocity}}km/h</p>
+    <p> {{weatherstationData?.windVelocity.measure_Double}}{{weatherstationData?.windVelocity.unitOfMeasurement_String}}</p>
   </div>
 </div>
 

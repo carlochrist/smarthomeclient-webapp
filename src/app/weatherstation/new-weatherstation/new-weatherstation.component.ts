@@ -50,4 +50,14 @@ export class NewWeatherstationComponent implements OnInit {
     this.weatherstationComponent.toggleNewWeatherstationTemplateOpen();
   }
 
+  setManufacturer(manufacturer: String) {
+    this.weatherstation.value.manufacturer = manufacturer
+    console.log(this.weatherstation);
+  }
+
+  setModel(model: String) {
+    this.weatherstation.value.modelVariant = model
+    console.log(this.weatherstation);
+  }
+
 }
