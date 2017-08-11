@@ -3,7 +3,6 @@ import {type} from 'os';
 import { Heating } from '../../models/heating.model';
 import {FormBuilder, FormControl, FormGroup, NgForm, NgModel, Validators} from '@angular/forms';
 import {DataService} from '../../services/data.service';
-import {User} from '../../models/signup.interface';
 import {HeatingComponent} from '../heating.component';
 
 @Component({

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {type} from 'os';
 import {FormBuilder, FormControl, FormGroup, NgForm, NgModel, Validators} from '@angular/forms';
 import {DataService} from '../../services/data.service';
-import {User} from '../../models/signup.interface';
 import {WeatherstationComponent} from '../weatherstation.component';
 
 @Component({

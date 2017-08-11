@@ -22,9 +22,6 @@
         "styles.css"
       ],
       "scripts": [
-        "./assets/js/cxf-utils.js",
-       "./assets/js/SHMwsDescriptor.js",
-        "./assets/js/myLibrary.js"
       ],
       "environments": {
         "source": "environments/environment.ts",
