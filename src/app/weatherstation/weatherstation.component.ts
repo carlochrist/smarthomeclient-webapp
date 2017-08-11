@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {DataService} from "../services/data.service";
+import {DataService} from '../services/data.service';
 
 @Component({
   selector: 'app-weatherstation',
@@ -20,7 +20,6 @@ export class WeatherstationComponent implements OnInit {
   }
 
   deleteWeatherstation() {
-    // this.dataService.deleteThermometer().subscribe(data => this.temperature = data);
     this.dataService.deleteWeatherstation();
   }
 }

@@ -23,18 +23,4 @@ export class DashboardHeatingComponent implements OnInit {
   checkUpdate() {
     this.dataService.getHeatingData().subscribe(data => this.heatingData = data);
   }
-
-  // ngOnDestroy() {
-  //   if (this.interval) {
-  //     clearInterval(this.interval);
-  //   }
-  // }
-
-
-
-
-
-
-
-
 }

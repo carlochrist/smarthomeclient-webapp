@@ -18,13 +18,10 @@
         <p>Seriennummer:</p>
         <input type="text" placeholder="{{weatherstationData?.serialnumber}}" formControlName="serialnumber">
       </div>
-
       <div>
         <button type="submit" (ngSubmit)="onSubmit()" [disabled]="weatherstation.invalid">Eingaben bestätigen</button>
       </div>
-
     </form>
-
   </div>
   <div class="col-md-4">
   <img src="../../assets/images/conrad_weatherstation.png" alt="" class="img-responsive"  style="height: 150px;">

@@ -22,8 +22,6 @@ export class NewHeatingComponent implements OnInit {
 
   ngOnInit() {
     this.dataService.getHeatingData().subscribe(data => this.heatingData = data);
-    // this.myGroup = new FormControl('Heating');
-    // console.log(this.heatingData);
     this.heating = this.fb.group({
       genericName: ['', [Validators.required]],
       manufacturer: ['', [Validators.required]],
@@ -32,16 +30,10 @@ export class NewHeatingComponent implements OnInit {
     });
   }
 
-
-  onSubmit() {
+ onSubmit() {
     console.log(this.heating);
     console.log(this.heating.value, this.heating.valid);
     console.log(this.heating.value[Object.keys(this.heating.value)[0]]);
-    // console.log(this.heatingData);
-    // console.log(this.heatingData.genericName);
-    // this.dataService.createHeating(this.heatingData.modelVariant,
-    //   this.heatingData.manufacturer, this.heatingData.genericName,
-    //   this.heatingData.serialnumber).subscribe(data => this.heatingData = data);
     this.dataService.createHeating(this.heating.value[Object.keys(this.heating.value)[2]],
       this.heating.value[Object.keys(this.heating.value)[1]],
       this.heating.value[Object.keys(this.heating.value)[0]],
@@ -49,16 +41,6 @@ export class NewHeatingComponent implements OnInit {
       .subscribe(data => this.heating = data);
     this.heating.reset();
     this.heatingComponent.toggleNewHeatingTemplateOpen();
-  }
-
-  setManufacturer(manufacturer: String) {
-    this.heating.value.manufacturer = manufacturer
-    console.log(this.heating);
-  }
-
-  setModel(model: String) {
-    this.heating.value.modelVariant = model
-    console.log(this.heating);
   }
 
 }

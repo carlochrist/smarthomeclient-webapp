@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {DataService} from '../services/data.service';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-thermometer',
@@ -21,7 +20,6 @@ export class ThermometerComponent implements OnInit {
   }
 
   deleteThermometer() {
-    // this.dataService.deleteThermometer().subscribe(data => this.temperature = data);
     this.dataService.deleteThermometer();
   }
 

@@ -3,7 +3,6 @@ import { enableProdMode } from '@angular/core';
 import { environment } from './environments/environment';
 import { AppModule } from './app/app.module';
 import { HttpModule } from '@angular/http';
-import { RequestOptions } from '@angular/http';
 
 if (environment.production) {
   enableProdMode();
